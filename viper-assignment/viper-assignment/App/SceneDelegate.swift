@@ -17,6 +17,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = createListModule()
+        window?.makeKeyAndVisible()
+    }
+
+    func createListModule() -> UINavigationController {
+        let viewController = ListViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        ListAssembly.build(with: viewController)
+        return navigationController
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
