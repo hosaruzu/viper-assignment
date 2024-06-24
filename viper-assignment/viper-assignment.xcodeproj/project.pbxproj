@@ -18,6 +18,15 @@
 		0C8146B52C299FA90034AD6D /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146B32C299FA90034AD6D /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C8146E42C29A30A0034AD6D /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146E32C29A30A0034AD6D /* NetworkKit.framework */; };
 		0C8146E52C29A30A0034AD6D /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146E32C29A30A0034AD6D /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C8146EC2C29A7D80034AD6D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146EB2C29A7D80034AD6D /* ListViewController.swift */; };
+		0C8146EE2C29A7E40034AD6D /* ListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146ED2C29A7E40034AD6D /* ListViewProtocol.swift */; };
+		0C8146F02C29A8D40034AD6D /* TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146EF2C29A8D40034AD6D /* TransitionHandler.swift */; };
+		0C8146F22C29AA240034AD6D /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146F12C29AA240034AD6D /* ListPresenter.swift */; };
+		0C8146F42C29AA5B0034AD6D /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146F32C29AA5B0034AD6D /* ListInteractor.swift */; };
+		0C8146F62C29AA700034AD6D /* ListInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146F52C29AA700034AD6D /* ListInteractorProtocol.swift */; };
+		0C8146F82C29AB2F0034AD6D /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146F72C29AB2F0034AD6D /* ListRouter.swift */; };
+		0C8146FA2C29AB890034AD6D /* ListRouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146F92C29AB890034AD6D /* ListRouterProtocols.swift */; };
+		0C8146FC2C29ABFE0034AD6D /* ListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146FB2C29ABFE0034AD6D /* ListAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +67,15 @@
 		0C81469C2C299C510034AD6D /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 		0C8146B32C299FA90034AD6D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146E32C29A30A0034AD6D /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8146EB2C29A7D80034AD6D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		0C8146ED2C29A7E40034AD6D /* ListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewProtocol.swift; sourceTree = "<group>"; };
+		0C8146EF2C29A8D40034AD6D /* TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionHandler.swift; sourceTree = "<group>"; };
+		0C8146F12C29AA240034AD6D /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		0C8146F32C29AA5B0034AD6D /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		0C8146F52C29AA700034AD6D /* ListInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorProtocol.swift; sourceTree = "<group>"; };
+		0C8146F72C29AB2F0034AD6D /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		0C8146F92C29AB890034AD6D /* ListRouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouterProtocols.swift; sourceTree = "<group>"; };
+		0C8146FB2C29ABFE0034AD6D /* ListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +177,11 @@
 		0C8146C72C29A26C0034AD6D /* List */ = {
 			isa = PBXGroup;
 			children = (
+				0C8146E62C29A76B0034AD6D /* Assembly */,
+				0C8146E72C29A7750034AD6D /* View */,
+				0C8146E82C29A77C0034AD6D /* Interactor */,
+				0C8146E92C29A7820034AD6D /* Presenter */,
+				0C8146EA2C29A7870034AD6D /* Router */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -168,6 +191,50 @@
 			children = (
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		0C8146E62C29A76B0034AD6D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146FB2C29ABFE0034AD6D /* ListAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		0C8146E72C29A7750034AD6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146EB2C29A7D80034AD6D /* ListViewController.swift */,
+				0C8146ED2C29A7E40034AD6D /* ListViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C8146E82C29A77C0034AD6D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146F32C29AA5B0034AD6D /* ListInteractor.swift */,
+				0C8146F52C29AA700034AD6D /* ListInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0C8146E92C29A7820034AD6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146F12C29AA240034AD6D /* ListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0C8146EA2C29A7870034AD6D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146EF2C29A8D40034AD6D /* TransitionHandler.swift */,
+				0C8146F72C29AB2F0034AD6D /* ListRouter.swift */,
+				0C8146F92C29AB890034AD6D /* ListRouterProtocols.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,9 +363,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8146FA2C29AB890034AD6D /* ListRouterProtocols.swift in Sources */,
+				0C8146F22C29AA240034AD6D /* ListPresenter.swift in Sources */,
 				0C8146612C2665D80034AD6D /* AppDelegate.swift in Sources */,
 				0C8146632C2665D80034AD6D /* SceneDelegate.swift in Sources */,
+				0C8146EC2C29A7D80034AD6D /* ListViewController.swift in Sources */,
+				0C8146FC2C29ABFE0034AD6D /* ListAssembly.swift in Sources */,
+				0C8146F62C29AA700034AD6D /* ListInteractorProtocol.swift in Sources */,
 				0C81466B2C2665D80034AD6D /* viper_assignment.xcdatamodeld in Sources */,
+				0C8146EE2C29A7E40034AD6D /* ListViewProtocol.swift in Sources */,
+				0C8146F42C29AA5B0034AD6D /* ListInteractor.swift in Sources */,
+				0C8146F82C29AB2F0034AD6D /* ListRouter.swift in Sources */,
+				0C8146F02C29A8D40034AD6D /* TransitionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
