@@ -8,7 +8,7 @@
 import XCTest
 @testable import viper_assignment
 
-final class viper_assignmentTests: XCTestCase {
+final class ViperAssignmentTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
