@@ -5,6 +5,9 @@
       location = "group:viper-assignment/viper-assignment.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:NetworkKit/NetworkKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Utilities/Utilities.xcodeproj">
    </FileRef>
 </Workspace>

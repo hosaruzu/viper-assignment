@@ -16,6 +16,8 @@
 		0C81469D2C299C510034AD6D /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0C81469C2C299C510034AD6D /* swiftlint.yml */; };
 		0C8146B42C299FA90034AD6D /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146B32C299FA90034AD6D /* Utilities.framework */; };
 		0C8146B52C299FA90034AD6D /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146B32C299FA90034AD6D /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C8146E42C29A30A0034AD6D /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146E32C29A30A0034AD6D /* NetworkKit.framework */; };
+		0C8146E52C29A30A0034AD6D /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146E32C29A30A0034AD6D /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0C8146E52C29A30A0034AD6D /* NetworkKit.framework in Embed Frameworks */,
 				0C8146B52C299FA90034AD6D /* Utilities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -54,6 +57,7 @@
 		0C81467A2C2665D90034AD6D /* viper_assignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viper_assignmentTests.swift; sourceTree = "<group>"; };
 		0C81469C2C299C510034AD6D /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 		0C8146B32C299FA90034AD6D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8146E32C29A30A0034AD6D /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8146E42C29A30A0034AD6D /* NetworkKit.framework in Frameworks */,
 				0C8146B42C299FA90034AD6D /* Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,12 +103,9 @@
 		0C81465F2C2665D80034AD6D /* viper-assignment */ = {
 			isa = PBXGroup;
 			children = (
-				0C8146602C2665D80034AD6D /* AppDelegate.swift */,
-				0C8146622C2665D80034AD6D /* SceneDelegate.swift */,
-				0C81466C2C2665D90034AD6D /* Assets.xcassets */,
-				0C81466E2C2665D90034AD6D /* LaunchScreen.storyboard */,
-				0C8146712C2665D90034AD6D /* Info.plist */,
-				0C8146692C2665D80034AD6D /* viper_assignment.xcdatamodeld */,
+				0C8146C62C29A22C0034AD6D /* App */,
+				0C8146C52C29A2250034AD6D /* Resources */,
+				0C8146C42C29A21B0034AD6D /* Modules */,
 			);
 			path = "viper-assignment";
 			sourceTree = "<group>";
@@ -119,9 +121,53 @@
 		0C8146B22C299FA90034AD6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C8146E32C29A30A0034AD6D /* NetworkKit.framework */,
 				0C8146B32C299FA90034AD6D /* Utilities.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C8146C42C29A21B0034AD6D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146C72C29A26C0034AD6D /* List */,
+				0C8146C82C29A2770034AD6D /* Detail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0C8146C52C29A2250034AD6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C81466C2C2665D90034AD6D /* Assets.xcassets */,
+				0C81466E2C2665D90034AD6D /* LaunchScreen.storyboard */,
+				0C8146712C2665D90034AD6D /* Info.plist */,
+				0C8146692C2665D80034AD6D /* viper_assignment.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C8146C62C29A22C0034AD6D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146602C2665D80034AD6D /* AppDelegate.swift */,
+				0C8146622C2665D80034AD6D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0C8146C72C29A26C0034AD6D /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		0C8146C82C29A2770034AD6D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,7 +460,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4YYVSHC6RN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "viper-assignment/Info.plist";
+				INFOPLIST_FILE = "viper-assignment/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -447,7 +493,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4YYVSHC6RN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "viper-assignment/Info.plist";
+				INFOPLIST_FILE = "viper-assignment/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
