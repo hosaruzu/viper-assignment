@@ -27,6 +27,11 @@
 		0C8146F82C29AB2F0034AD6D /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146F72C29AB2F0034AD6D /* ListRouter.swift */; };
 		0C8146FA2C29AB890034AD6D /* ListRouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146F92C29AB890034AD6D /* ListRouterProtocols.swift */; };
 		0C8146FC2C29ABFE0034AD6D /* ListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146FB2C29ABFE0034AD6D /* ListAssembly.swift */; };
+		0C8147032C29AE650034AD6D /* DetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147022C29AE650034AD6D /* DetailViewProtocol.swift */; };
+		0C8147072C29AF460034AD6D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147062C29AF460034AD6D /* DetailViewController.swift */; };
+		0C8147092C29AF970034AD6D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147082C29AF970034AD6D /* DetailPresenter.swift */; };
+		0C81470B2C29B0210034AD6D /* DetailModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81470A2C29B0210034AD6D /* DetailModuleInput.swift */; };
+		0C81470D2C29B0C10034AD6D /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81470C2C29B0C10034AD6D /* DetailAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,11 @@
 		0C8146F72C29AB2F0034AD6D /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
 		0C8146F92C29AB890034AD6D /* ListRouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouterProtocols.swift; sourceTree = "<group>"; };
 		0C8146FB2C29ABFE0034AD6D /* ListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAssembly.swift; sourceTree = "<group>"; };
+		0C8147022C29AE650034AD6D /* DetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewProtocol.swift; sourceTree = "<group>"; };
+		0C8147062C29AF460034AD6D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0C8147082C29AF970034AD6D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		0C81470A2C29B0210034AD6D /* DetailModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModuleInput.swift; sourceTree = "<group>"; };
+		0C81470C2C29B0C10034AD6D /* DetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +199,9 @@
 		0C8146C82C29A2770034AD6D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				0C8147012C29AE170034AD6D /* View */,
+				0C8146FE2C29ADFB0034AD6D /* Presenter */,
+				0C8146FD2C29ADEE0034AD6D /* Assembly */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -235,6 +248,32 @@
 				0C8146F92C29AB890034AD6D /* ListRouterProtocols.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		0C8146FD2C29ADEE0034AD6D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				0C81470C2C29B0C10034AD6D /* DetailAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		0C8146FE2C29ADFB0034AD6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0C8147082C29AF970034AD6D /* DetailPresenter.swift */,
+				0C81470A2C29B0210034AD6D /* DetailModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0C8147012C29AE170034AD6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C8147022C29AE650034AD6D /* DetailViewProtocol.swift */,
+				0C8147062C29AF460034AD6D /* DetailViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,14 +406,19 @@
 				0C8146F22C29AA240034AD6D /* ListPresenter.swift in Sources */,
 				0C8146612C2665D80034AD6D /* AppDelegate.swift in Sources */,
 				0C8146632C2665D80034AD6D /* SceneDelegate.swift in Sources */,
+				0C8147032C29AE650034AD6D /* DetailViewProtocol.swift in Sources */,
 				0C8146EC2C29A7D80034AD6D /* ListViewController.swift in Sources */,
 				0C8146FC2C29ABFE0034AD6D /* ListAssembly.swift in Sources */,
 				0C8146F62C29AA700034AD6D /* ListInteractorProtocol.swift in Sources */,
+				0C8147092C29AF970034AD6D /* DetailPresenter.swift in Sources */,
 				0C81466B2C2665D80034AD6D /* viper_assignment.xcdatamodeld in Sources */,
 				0C8146EE2C29A7E40034AD6D /* ListViewProtocol.swift in Sources */,
+				0C81470D2C29B0C10034AD6D /* DetailAssembly.swift in Sources */,
+				0C81470B2C29B0210034AD6D /* DetailModuleInput.swift in Sources */,
 				0C8146F42C29AA5B0034AD6D /* ListInteractor.swift in Sources */,
 				0C8146F82C29AB2F0034AD6D /* ListRouter.swift in Sources */,
 				0C8146F02C29A8D40034AD6D /* TransitionHandler.swift in Sources */,
+				0C8147072C29AF460034AD6D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

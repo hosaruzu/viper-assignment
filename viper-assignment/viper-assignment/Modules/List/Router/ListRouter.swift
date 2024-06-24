@@ -12,7 +12,10 @@ final class ListRouter {
 }
 
 extension ListRouter: ListRouterInput {
-    func pushToDetail() {
-//        transitionHandler?.pushToModule(viewController: <#T##UIViewController#>)
+    func pushToDetail() -> DetailModuleInput {
+        let viewController = DetailViewController()
+        let detailInput = DetailAssembly.build(view: viewController)
+        transitionHandler?.pushToModule(viewController: viewController)
+        return detailInput
     }
 }
