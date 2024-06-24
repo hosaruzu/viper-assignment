@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C8146AC2C299E380034AD6D /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C8146AB2C299E380034AD6D /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C8146B92C299FCA0034AD6D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C8146B82C299FCA0034AD6D /* SnapKit */; };
+		0C8147162C29BB2A0034AD6D /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		0C8146A82C299E380034AD6D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146AB2C299E380034AD6D /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,8 @@
 		0C8146AA2C299E380034AD6D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0C8147142C29BAED0034AD6D /* Helpers */,
+				0C8147132C29BAE30034AD6D /* Extensions */,
 				0C8146AB2C299E380034AD6D /* Utilities.h */,
 			);
 			path = Utilities;
@@ -71,6 +75,21 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C8147132C29BAE30034AD6D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0C8147142C29BAED0034AD6D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8147162C29BB2A0034AD6D /* ReuseIdentifiable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
