@@ -14,6 +14,8 @@
 		0C8146702C2665D90034AD6D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0C81466F2C2665D90034AD6D /* Base */; };
 		0C81467B2C2665D90034AD6D /* viper_assignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81467A2C2665D90034AD6D /* viper_assignmentTests.swift */; };
 		0C81469D2C299C510034AD6D /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0C81469C2C299C510034AD6D /* swiftlint.yml */; };
+		0C8146B42C299FA90034AD6D /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146B32C299FA90034AD6D /* Utilities.framework */; };
+		0C8146B52C299FA90034AD6D /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146B32C299FA90034AD6D /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0C8146B62C299FA90034AD6D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0C8146B52C299FA90034AD6D /* Utilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C81465D2C2665D80034AD6D /* viper-assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viper-assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146602C2665D80034AD6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +53,7 @@
 		0C8146762C2665D90034AD6D /* viper-assignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "viper-assignmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C81467A2C2665D90034AD6D /* viper_assignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viper_assignmentTests.swift; sourceTree = "<group>"; };
 		0C81469C2C299C510034AD6D /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
+		0C8146B32C299FA90034AD6D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8146B42C299FA90034AD6D /* Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +82,7 @@
 				0C81465F2C2665D80034AD6D /* viper-assignment */,
 				0C8146792C2665D90034AD6D /* viper-assignmentTests */,
 				0C81465E2C2665D80034AD6D /* Products */,
+				0C8146B22C299FA90034AD6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +116,14 @@
 			path = "viper-assignmentTests";
 			sourceTree = "<group>";
 		};
+		0C8146B22C299FA90034AD6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146B32C299FA90034AD6D /* Utilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,6 +135,7 @@
 				0C81465A2C2665D80034AD6D /* Frameworks */,
 				0C81465B2C2665D80034AD6D /* Resources */,
 				0C81469B2C299B630034AD6D /* ShellScript */,
+				0C8146B62C299FA90034AD6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
