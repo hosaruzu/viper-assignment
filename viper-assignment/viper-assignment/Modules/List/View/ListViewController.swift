@@ -20,7 +20,7 @@ final class ListViewController: UIViewController {
 
 // MARK: - ListView Conformance
 
-extension ListViewController: ListView {
+extension ListViewController: ListViewPresentable {
     func set(state: ListViewState) {
         switch state {
         case .loading: break

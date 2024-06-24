@@ -15,7 +15,7 @@ protocol ListViewOutput: AnyObject {
     func viewDidLoad()
 }
 
-protocol ListView: ListViewInput, TransitionHandler {
+protocol ListViewPresentable: ListViewInput, TransitionHandler {
     var output: ListViewOutput! { get set }
 }
 
