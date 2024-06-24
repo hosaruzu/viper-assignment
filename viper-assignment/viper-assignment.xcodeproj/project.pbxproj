@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		0C8146612C2665D80034AD6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146602C2665D80034AD6D /* AppDelegate.swift */; };
 		0C8146632C2665D80034AD6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146622C2665D80034AD6D /* SceneDelegate.swift */; };
-		0C8146652C2665D80034AD6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146642C2665D80034AD6D /* ViewController.swift */; };
-		0C8146682C2665D80034AD6D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0C8146672C2665D80034AD6D /* Base */; };
 		0C81466B2C2665D80034AD6D /* viper_assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146692C2665D80034AD6D /* viper_assignment.xcdatamodeld */; };
 		0C81466D2C2665D90034AD6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C81466C2C2665D90034AD6D /* Assets.xcassets */; };
 		0C8146702C2665D90034AD6D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0C81466F2C2665D90034AD6D /* Base */; };
 		0C81467B2C2665D90034AD6D /* viper_assignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81467A2C2665D90034AD6D /* viper_assignmentTests.swift */; };
+		0C81469D2C299C510034AD6D /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0C81469C2C299C510034AD6D /* swiftlint.yml */; };
+		0C8146B42C299FA90034AD6D /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146B32C299FA90034AD6D /* Utilities.framework */; };
+		0C8146B52C299FA90034AD6D /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8146B32C299FA90034AD6D /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,18 +28,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0C8146B62C299FA90034AD6D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0C8146B52C299FA90034AD6D /* Utilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C81465D2C2665D80034AD6D /* viper-assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viper-assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146602C2665D80034AD6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C8146622C2665D80034AD6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C8146642C2665D80034AD6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0C8146672C2665D80034AD6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C81466A2C2665D80034AD6D /* viper_assignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = viper_assignment.xcdatamodel; sourceTree = "<group>"; };
 		0C81466C2C2665D90034AD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C81466F2C2665D90034AD6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C8146712C2665D90034AD6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C8146762C2665D90034AD6D /* viper-assignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "viper-assignmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C81467A2C2665D90034AD6D /* viper_assignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viper_assignmentTests.swift; sourceTree = "<group>"; };
+		0C81469C2C299C510034AD6D /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
+		0C8146B32C299FA90034AD6D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8146B42C299FA90034AD6D /* Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,9 +78,11 @@
 		0C8146542C2665D80034AD6D = {
 			isa = PBXGroup;
 			children = (
+				0C81469C2C299C510034AD6D /* swiftlint.yml */,
 				0C81465F2C2665D80034AD6D /* viper-assignment */,
 				0C8146792C2665D90034AD6D /* viper-assignmentTests */,
 				0C81465E2C2665D80034AD6D /* Products */,
+				0C8146B22C299FA90034AD6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,8 +100,6 @@
 			children = (
 				0C8146602C2665D80034AD6D /* AppDelegate.swift */,
 				0C8146622C2665D80034AD6D /* SceneDelegate.swift */,
-				0C8146642C2665D80034AD6D /* ViewController.swift */,
-				0C8146662C2665D80034AD6D /* Main.storyboard */,
 				0C81466C2C2665D90034AD6D /* Assets.xcassets */,
 				0C81466E2C2665D90034AD6D /* LaunchScreen.storyboard */,
 				0C8146712C2665D90034AD6D /* Info.plist */,
@@ -100,6 +116,14 @@
 			path = "viper-assignmentTests";
 			sourceTree = "<group>";
 		};
+		0C8146B22C299FA90034AD6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C8146B32C299FA90034AD6D /* Utilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +134,8 @@
 				0C8146592C2665D80034AD6D /* Sources */,
 				0C81465A2C2665D80034AD6D /* Frameworks */,
 				0C81465B2C2665D80034AD6D /* Resources */,
+				0C81469B2C299B630034AD6D /* ShellScript */,
+				0C8146B62C299FA90034AD6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,8 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C81466D2C2665D90034AD6D /* Assets.xcassets in Resources */,
+				0C81469D2C299C510034AD6D /* swiftlint.yml in Resources */,
 				0C8146702C2665D90034AD6D /* Base in Resources */,
-				0C8146682C2665D80034AD6D /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,12 +224,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C81469B2C299B630034AD6D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nPATH=/opt/homebrew/bin:$PATH\n    if which swiftlint >/dev/null; then\n    swiftlint\n    else\n        echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0C8146592C2665D80034AD6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8146652C2665D80034AD6D /* ViewController.swift in Sources */,
 				0C8146612C2665D80034AD6D /* AppDelegate.swift in Sources */,
 				0C8146632C2665D80034AD6D /* SceneDelegate.swift in Sources */,
 				0C81466B2C2665D80034AD6D /* viper_assignment.xcdatamodeld in Sources */,
@@ -229,14 +275,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C8146662C2665D80034AD6D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C8146672C2665D80034AD6D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0C81466E2C2665D90034AD6D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -379,7 +417,7 @@
 				INFOPLIST_FILE = "viper-assignment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -412,7 +450,7 @@
 				INFOPLIST_FILE = "viper-assignment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
