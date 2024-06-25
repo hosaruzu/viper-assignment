@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol ReuseIdentrifiable {
+public protocol ReuseIdentrifiable {
     static var reuseIdentifier: String { get }
 }
 
-extension ReuseIdentrifiable {
+public extension ReuseIdentrifiable {
     static var reuseIdentifier: String {
         return String(describing: self)
     }
@@ -21,7 +21,7 @@ extension UICollectionViewCell: ReuseIdentrifiable {}
 
 // MARK: - UICollectionView + ReuseIdentrifiable
 
-extension UICollectionView {
+public extension UICollectionView {
     func dequeue<T: UICollectionViewCell>(
         _ cellType: T.Type,
         for indexPath: IndexPath

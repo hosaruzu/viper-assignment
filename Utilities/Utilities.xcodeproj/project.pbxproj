@@ -10,6 +10,8 @@
 		0C8146AC2C299E380034AD6D /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C8146AB2C299E380034AD6D /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C8146B92C299FCA0034AD6D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C8146B82C299FCA0034AD6D /* SnapKit */; };
 		0C8147162C29BB2A0034AD6D /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */; };
+		0C8147192C29BE3D0034AD6D /* VALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147182C29BE3D0034AD6D /* VALabel.swift */; };
+		0C81471B2C29C2490034AD6D /* VAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81471A2C29C2490034AD6D /* VAImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		0C8146A82C299E380034AD6D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146AB2C299E380034AD6D /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		0C8147182C29BE3D0034AD6D /* VALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VALabel.swift; sourceTree = "<group>"; };
+		0C81471A2C29C2490034AD6D /* VAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		0C8146AA2C299E380034AD6D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0C8147172C29BE1E0034AD6D /* Common UI */,
 				0C8147142C29BAED0034AD6D /* Helpers */,
 				0C8147132C29BAE30034AD6D /* Extensions */,
 				0C8146AB2C299E380034AD6D /* Utilities.h */,
@@ -90,6 +95,15 @@
 				0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0C8147172C29BE1E0034AD6D /* Common UI */ = {
+			isa = PBXGroup;
+			children = (
+				0C8147182C29BE3D0034AD6D /* VALabel.swift */,
+				0C81471A2C29C2490034AD6D /* VAImageView.swift */,
+			);
+			path = "Common UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +193,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C81471B2C29C2490034AD6D /* VAImageView.swift in Sources */,
 				0C8147162C29BB2A0034AD6D /* ReuseIdentifiable.swift in Sources */,
+				0C8147192C29BE3D0034AD6D /* VALabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

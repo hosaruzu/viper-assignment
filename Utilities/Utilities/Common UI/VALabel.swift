@@ -36,8 +36,6 @@ final public class VALabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Setup
-
     func setFont(with fontKind: Font) {
         switch fontKind {
         case .priceList:
@@ -71,9 +69,9 @@ private enum Spec {
     static let titleColor: UIColor = .label
     static let secondaryColor: UIColor = .secondaryLabel
 
-    static let titleListFont: UIFont = .systemFont(ofSize: 16, weight: .medium)
-    static let priceListFont: UIFont = .systemFont(ofSize: 18, weight: .bold)
-    static let bodyListFont: UIFont = .systemFont(ofSize: 14, weight: .regular)
+    static let titleListFont: UIFont = .systemFont(ofSize: 16, weight: .regular)
+    static let priceListFont: UIFont = .systemFont(ofSize: 16, weight: .medium)
+    static let bodyListFont: UIFont = .systemFont(ofSize: 12, weight: .light)
 
     static let titleDetailFont: UIFont = .systemFont(ofSize: 20, weight: .bold)
     static let bodyDetailFont: UIFont = .systemFont(ofSize: 16, weight: .regular)

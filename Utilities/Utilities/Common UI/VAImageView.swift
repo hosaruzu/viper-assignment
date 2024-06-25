@@ -23,6 +23,7 @@ final public class VAImageView: UIImageView {
     // MARK: - Setup
 
     func setup(isRounded: Bool) {
+        layer.masksToBounds = true
         if isRounded {
             layer.cornerRadius = 8
         } else {
