@@ -26,18 +26,18 @@ final class LoaderView: UIView {
         setupConstraints()
         start()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Public
 
-    private func start() {
+    func start() {
         activityIndicator.startAnimating()
     }
 
-    private func stop() {
+    func stop() {
         activityIndicator.stopAnimating()
     }
 }
