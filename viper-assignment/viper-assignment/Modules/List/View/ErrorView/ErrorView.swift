@@ -17,7 +17,7 @@ final class ErrorView: UIView {
 
     private let errorTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.font = .systemFont(ofSize: Spec.Title.fontSize, weight: .medium)
         label.textColor = .label
         label.text = "Something went wrong"
         return label
@@ -27,16 +27,18 @@ final class ErrorView: UIView {
         let button = UIButton(type: .system)
         let text = NSAttributedString(
             string: "Try again",
-            attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .semibold)])
+            attributes: [.font: UIFont.systemFont(ofSize: Spec.Button.fontSize, weight: .semibold)])
         button.setAttributedTitle(text, for: .normal)
-        button.setTitleColor(.label, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = Spec.Button.cornerRadius
         return button
     }()
 
     private let vStack: UIStackView = {
         let vStack = UIStackView()
         vStack.axis = .vertical
-        vStack.spacing = Spec.vStackDefaultSpacing
+        vStack.spacing = Spec.Stack.defaultSpacing
         vStack.alignment = .center
         return vStack
     }()
@@ -63,7 +65,7 @@ final class ErrorView: UIView {
     // MARK: - Public
 
     func show() {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: Spec.Animation.duration) {
             self.isHidden = false
             self.alpha = 1
         }
@@ -71,7 +73,7 @@ final class ErrorView: UIView {
     }
 
     func hide() {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: Spec.Animation.duration) {
             self.isHidden = true
             self.alpha = 0
         }
@@ -82,7 +84,7 @@ final class ErrorView: UIView {
 
 private extension ErrorView {
     func setupAppearance() {
-        backgroundColor = .systemBackground
+//        backgroundColor = .systemBackground
     }
 }
 
@@ -97,6 +99,11 @@ private extension ErrorView {
     }
 
     func setupConstraints() {
+        errorButton.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(Spec.Button.height)
+        }
+
         vStack.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
@@ -120,8 +127,21 @@ private extension ErrorView {
 // MARK: - UI constants
 
 private enum Spec {
-    static let imageViewWidth: CGFloat = 56
-    static let imageViewHeight: CGFloat = 56
-    static let vStackDefaultSpacing: CGFloat = 12
-    static let imageToTitleOffset: CGFloat = 8
+   enum Stack {
+       static let defaultSpacing: CGFloat = 12
+    }
+
+    enum Title {
+        static let fontSize: CGFloat = 18
+    }
+
+    enum Button {
+        static let fontSize: CGFloat = 16
+        static let cornerRadius: CGFloat = 12
+        static let height: CGFloat = 44
+    }
+
+    enum Animation {
+        static let duration: Double = 0.3
+    }
 }
