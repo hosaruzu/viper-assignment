@@ -18,6 +18,7 @@ final class ListViewController: UIViewController {
 
     private var collectionView = CollectionView()
     private var loaderView = LoaderView()
+    private var errorView = ErrorView()
 
     // MARK: - Lifecyce
 
@@ -27,8 +28,7 @@ final class ListViewController: UIViewController {
         setupAppearance()
         addSubviews()
         setupConstraints()
-
-        collectionView.delegate = self
+        setupDelegates()
     }
 }
 
@@ -48,6 +48,8 @@ private extension ListViewController {
     private func addSubviews() {
         view.addSubview(collectionView)
         view.addSubview(loaderView)
+        view.addSubview(errorView)
+
     }
 
     private func setupConstraints() {
@@ -55,8 +57,20 @@ private extension ListViewController {
             make.edges.equalToSuperview()
         }
         loaderView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        errorView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Setup Delegates
+
+private extension ListViewController {
+    func setupDelegates() {
+        collectionView.delegate = self
+        errorView.delegate = self
     }
 }
 
@@ -70,11 +84,20 @@ extension ListViewController: ListViewPresentable {
         case .error: break
         }
     }
-
 }
+
+// MARK: - CollectionViewDelegate
 
 extension ListViewController: CollectionViewDelegate {
     func didSelectItem() {
-        print("item selected")
+        print("did select")
+    }
+}
+
+// MARK: - ErrorViewDelegate
+
+extension ListViewController: ErrorViewDelegate {
+    func didTapButton() {
+        errorView.hide()
     }
 }

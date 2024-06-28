@@ -46,7 +46,7 @@ final class CollectionView: UIView {
 // MARK: - Setup Collection View
 
 private extension CollectionView {
-    private func setupCollectionView() {
+    func setupCollectionView() {
         collectionView = UICollectionView(
             frame: .zero,
             collectionViewLayout: UICollectionView.makeLayoutWithTwoColumns()
@@ -62,7 +62,7 @@ private extension CollectionView {
         }
     }
 
-    private func setupDataSource() {
+    func setupDataSource() {
         dataSource = .init(collectionView: collectionView, cellProvider: { collectionView, indexPath, _ in
             let cell = collectionView.dequeue(ProductCell.self, for: indexPath)
             cell.setup()
