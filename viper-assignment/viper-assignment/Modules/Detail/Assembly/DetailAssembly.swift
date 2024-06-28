@@ -8,7 +8,7 @@
 import Foundation
 
 final class DetailAssembly {
-    static func build(view: DetailView) -> DetailModuleInput {
+    static func build(view: DetailViewPresentable) -> DetailModuleInput {
         let presenter = DetailPresenter(view: view)
         view.output = presenter
         return presenter

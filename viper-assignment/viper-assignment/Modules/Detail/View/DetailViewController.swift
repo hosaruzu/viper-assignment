@@ -17,7 +17,9 @@ final class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController: DetailView {
+// MARK: - DetailViewPresentable
+
+extension DetailViewController: DetailViewPresentable {
     func setup(with: String) {
         //
     }
