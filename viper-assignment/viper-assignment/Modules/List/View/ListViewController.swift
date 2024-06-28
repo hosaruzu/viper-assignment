@@ -90,7 +90,7 @@ extension ListViewController: ListViewPresentable {
 
 extension ListViewController: CollectionViewDelegate {
     func didSelectItem() {
-        print("did select")
+        output.didTapOnItem()
     }
 }
 

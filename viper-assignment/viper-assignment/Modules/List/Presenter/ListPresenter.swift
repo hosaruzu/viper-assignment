@@ -13,6 +13,8 @@ final class ListPresenter {
     private let interactor: ListInteractorInput
     private let router: ListRouterInput
 
+    private weak var detailScreen: DetailModuleInput?
+
     init(
         view: ListViewInput,
         interactor: ListInteractorInput,
@@ -28,6 +30,10 @@ extension ListPresenter: ListViewOutput {
 
     func viewDidLoad() {
         //
+    }
+
+    func didTapOnItem() {
+       detailScreen = router.pushToDetail()
     }
 }
 

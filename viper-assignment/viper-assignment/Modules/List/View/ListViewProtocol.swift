@@ -13,6 +13,7 @@ protocol ListViewInput: AnyObject {
 
 protocol ListViewOutput: AnyObject {
     func viewDidLoad()
+    func didTapOnItem()
 }
 
 protocol ListViewPresentable: ListViewInput, TransitionHandler {
