@@ -6,19 +6,56 @@
 //
 
 import UIKit
+import SnapKit
 
 final class ListViewController: UIViewController {
 
+    // MARK: - View Output
+
     var output: ListViewOutput!
+
+    // MARK: - Subviews
+
+    private var collectionView = CollectionView()
+
+    // MARK: - Lifecyce
 
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewDidLoad()
-    }
+        setupAppearance()
+        addSubviews()
+        setupConstraints()
 
+        collectionView.delegate = self
+    }
 }
 
-// MARK: - ListView Conformance
+// MARK: - Setup appearance
+
+private extension ListViewController {
+    func setupAppearance() {
+        title = "Products"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .systemBackground
+    }
+}
+
+// MARK: - Setup layout
+
+private extension ListViewController {
+    private func addSubviews() {
+        view.addSubview(collectionView)
+    }
+
+    private func setupConstraints() {
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+}
+
+// MARK: - ColelctionView Conformance
 
 extension ListViewController: ListViewPresentable {
     func set(state: ListViewState) {
@@ -29,4 +66,10 @@ extension ListViewController: ListViewPresentable {
         }
     }
 
+}
+
+extension ListViewController: CollectionViewDelegate {
+    func didSelectItem() {
+        print("item selected")
+    }
 }

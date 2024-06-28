@@ -12,6 +12,7 @@
 		0C8147162C29BB2A0034AD6D /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */; };
 		0C8147192C29BE3D0034AD6D /* VALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147182C29BE3D0034AD6D /* VALabel.swift */; };
 		0C81471B2C29C2490034AD6D /* VAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81471A2C29C2490034AD6D /* VAImageView.swift */; };
+		0C81471D2C2BD4E80034AD6D /* UICollectionView+Compositional Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81471C2C2BD4E80034AD6D /* UICollectionView+Compositional Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		0C8147152C29BB2A0034AD6D /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		0C8147182C29BE3D0034AD6D /* VALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VALabel.swift; sourceTree = "<group>"; };
 		0C81471A2C29C2490034AD6D /* VAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAImageView.swift; sourceTree = "<group>"; };
+		0C81471C2C2BD4E80034AD6D /* UICollectionView+Compositional Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Compositional Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		0C8147132C29BAE30034AD6D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0C81471C2C2BD4E80034AD6D /* UICollectionView+Compositional Layout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C81471B2C29C2490034AD6D /* VAImageView.swift in Sources */,
+				0C81471D2C2BD4E80034AD6D /* UICollectionView+Compositional Layout.swift in Sources */,
 				0C8147162C29BB2A0034AD6D /* ReuseIdentifiable.swift in Sources */,
 				0C8147192C29BE3D0034AD6D /* VALabel.swift in Sources */,
 			);
