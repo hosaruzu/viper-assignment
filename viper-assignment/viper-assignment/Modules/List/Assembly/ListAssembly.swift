@@ -9,7 +9,7 @@ import Foundation
 
 final class ListAssembly {
 
-    static func build(with view: ListView) {
+    static func build(with view: ListViewPresentable) {
         let interactor = ListInteractor()
         let router = ListRouter()
         let presenter = ListPresenter(
