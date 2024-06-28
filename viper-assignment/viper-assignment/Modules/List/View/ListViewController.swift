@@ -17,6 +17,7 @@ final class ListViewController: UIViewController {
     // MARK: - Subviews
 
     private var collectionView = CollectionView()
+    private var loaderView = LoaderView()
 
     // MARK: - Lifecyce
 
@@ -46,10 +47,14 @@ private extension ListViewController {
 private extension ListViewController {
     private func addSubviews() {
         view.addSubview(collectionView)
+        view.addSubview(loaderView)
     }
 
     private func setupConstraints() {
         collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        loaderView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }

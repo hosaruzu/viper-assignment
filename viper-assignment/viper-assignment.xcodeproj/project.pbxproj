@@ -34,6 +34,7 @@
 		0C81470D2C29B0C10034AD6D /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81470C2C29B0C10034AD6D /* DetailAssembly.swift */; };
 		0C81470F2C29B9B90034AD6D /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81470E2C29B9B90034AD6D /* CollectionView.swift */; };
 		0C8147122C29BAB80034AD6D /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147112C29BAB80034AD6D /* ProductCell.swift */; };
+		0C8147712C2EA7590034AD6D /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8147702C2EA7590034AD6D /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		0C81470C2C29B0C10034AD6D /* DetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 		0C81470E2C29B9B90034AD6D /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		0C8147112C29BAB80034AD6D /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		0C8147702C2EA7590034AD6D /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,9 +223,10 @@
 		0C8146E72C29A7750034AD6D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C81476F2C2EA7400034AD6D /* ErrorView */,
+				0C81476E2C2EA73B0034AD6D /* Loader */,
 				0C8147102C29BAAE0034AD6D /* CollectionView */,
 				0C8146EB2C29A7D80034AD6D /* ListViewController.swift */,
-				0C81470E2C29B9B90034AD6D /* CollectionView.swift */,
 				0C8146ED2C29A7E40034AD6D /* ListViewProtocol.swift */,
 			);
 			path = View;
@@ -285,9 +288,25 @@
 		0C8147102C29BAAE0034AD6D /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				0C81470E2C29B9B90034AD6D /* CollectionView.swift */,
 				0C8147112C29BAB80034AD6D /* ProductCell.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		0C81476E2C2EA73B0034AD6D /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				0C8147702C2EA7590034AD6D /* LoaderView.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		0C81476F2C2EA7400034AD6D /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ErrorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +452,7 @@
 				0C8146F42C29AA5B0034AD6D /* ListInteractor.swift in Sources */,
 				0C8147122C29BAB80034AD6D /* ProductCell.swift in Sources */,
 				0C8146F82C29AB2F0034AD6D /* ListRouter.swift in Sources */,
+				0C8147712C2EA7590034AD6D /* LoaderView.swift in Sources */,
 				0C8146F02C29A8D40034AD6D /* TransitionHandler.swift in Sources */,
 				0C8147072C29AF460034AD6D /* DetailViewController.swift in Sources */,
 			);
