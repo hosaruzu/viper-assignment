@@ -15,6 +15,6 @@ protocol DetailViewOutput: AnyObject {
     func viewDidLoad()
 }
 
-protocol DetailView: DetailViewInput {
+protocol DetailViewPresentable: DetailViewInput {
     var output: DetailViewOutput! { get set }
 }
