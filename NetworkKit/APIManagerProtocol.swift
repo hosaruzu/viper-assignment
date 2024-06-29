@@ -13,7 +13,7 @@ class APIManager: APIManagerProtocol {
 
     private let urlSession: URLSession
 
-    init(urlSession: URLSession) {
+    init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
 

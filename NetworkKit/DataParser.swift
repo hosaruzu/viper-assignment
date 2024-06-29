@@ -13,7 +13,7 @@ final class DataParser: DataParserProtocol {
 
     private var jsonDecoder: JSONDecoder
 
-    init(jsonDecoder: JSONDecoder) {
+    init(jsonDecoder: JSONDecoder = JSONDecoder()) {
         self.jsonDecoder = jsonDecoder
         self.jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     }
