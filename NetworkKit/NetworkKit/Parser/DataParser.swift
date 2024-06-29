@@ -10,7 +10,6 @@ protocol DataParserProtocol {
 }
 
 final class DataParser: DataParserProtocol {
-
     private var jsonDecoder: JSONDecoder
 
     init(jsonDecoder: JSONDecoder = JSONDecoder()) {

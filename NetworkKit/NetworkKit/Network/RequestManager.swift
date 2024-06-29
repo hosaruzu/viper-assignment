@@ -1,11 +1,9 @@
 //
-//  RequestManagerProtocol.swift
+//  RequestManager.swift
 //  NetworkKit
 //
 //  Created by Artem Tebenkov on 29.06.2024.
 //
-
-import Foundation
 
 protocol RequestManagerProtocol {
     func perform<T: Decodable>(_ request: RequestProtocol) async throws -> T

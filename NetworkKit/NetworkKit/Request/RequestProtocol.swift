@@ -13,7 +13,6 @@ protocol RequestProtocol {
 }
 
 extension RequestProtocol {
-
     var host: String {
         APICostants.host
     }
