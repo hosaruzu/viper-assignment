@@ -5,7 +5,7 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
-import Foundation
+import NetworkKit
 
 final class ListPresenter {
 
@@ -29,7 +29,9 @@ final class ListPresenter {
 extension ListPresenter: ListViewOutput {
 
     func viewDidLoad() {
-        //
+        Task {
+           try await interactor.obtainProductsList()
+        }
     }
 
     func didTapOnItem() {
@@ -39,7 +41,8 @@ extension ListPresenter: ListViewOutput {
 
 extension ListPresenter: ListInteractorOutput {
 
-    func setSuccessObtainData() {
+    func setSuccessObtainData(_ data: ListProductsContainer) {
+        print(data)
         view.set(state: .success)
     }
 
