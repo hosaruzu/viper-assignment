@@ -5,13 +5,11 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
-import Foundation
-
 protocol ListInteractorInput: AnyObject {
-    func obtainProductsList()
+    func obtainProductsList() async throws
 }
 
 protocol ListInteractorOutput: AnyObject {
-    func setSuccessObtainData()
+    func setSuccessObtainData(_ data: ListProductsContainer)
     func setFailedObtainData(error: Error)
 }

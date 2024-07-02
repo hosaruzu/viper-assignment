@@ -5,16 +5,28 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
-import Foundation
-
 final class ListInteractor {
 
+    // MARK: - Dependencies
+
+    private let requestManager: RequestManager
+
+    // MARK: - Interactor output
+
     weak var output: ListInteractorOutput?
+
+    // MARK: - Init
+
+    init(requestManger: RequestManager) {
+        self.requestManager = requestManger
+    }
 }
 
-extension ListInteractor: ListInteractorInput {
+// MARK: - ListInteractorInput
 
-    func obtainProductsList() {
-        //
+extension ListInteractor: ListInteractorInput {
+    func obtainProductsList() async throws {
+        let data: ListProductsContainer = try await requestManager.perform(ListRequest.getProductList)
+        output?.setSuccessObtainData(data)
     }
 }

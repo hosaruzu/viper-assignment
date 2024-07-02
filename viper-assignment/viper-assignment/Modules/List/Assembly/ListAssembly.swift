@@ -5,12 +5,11 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
-import Foundation
-
 final class ListAssembly {
 
     static func build(with view: ListViewPresentable) {
-        let interactor = ListInteractor()
+        let requestManager = RequestManager()
+        let interactor = ListInteractor(requestManger: requestManager)
         let router = ListRouter()
         let presenter = ListPresenter(
             view: view,
