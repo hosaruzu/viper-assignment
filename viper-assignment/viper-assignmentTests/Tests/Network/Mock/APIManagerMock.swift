@@ -10,7 +10,6 @@ import Foundation
 
 struct APIManagerMock: APIManagerProtocol {
     func perform(_ request: RequestProtocol) async throws -> Data {
-        print(request.path)
         return try Data(contentsOf: URL(fileURLWithPath: request.path), options: .mappedIfSafe)
     }
 }

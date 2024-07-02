@@ -437,13 +437,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		0C81483C2C341EC80034AD6D /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		0C8148402C341EC80034AD6D /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,7 +467,6 @@
 		0C8148482C3420580034AD6D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0C81483C2C341EC80034AD6D /* Helper */,
 				0C8148402C341EC80034AD6D /* Mock */,
 				0C81483B2C341EC80034AD6D /* RequestManagerTests.swift */,
 			);
