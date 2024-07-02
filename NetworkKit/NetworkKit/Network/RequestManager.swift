@@ -9,11 +9,11 @@ protocol RequestManagerProtocol {
     func perform<T: Decodable>(_ request: RequestProtocol) async throws -> T
 }
 
-final class RequestManager: RequestManagerProtocol {
-    let apiManager: APIManagerProtocol
-    let parser: DataParserProtocol
+public final class RequestManager: RequestManagerProtocol {
+    public let apiManager: APIManagerProtocol
+    public let parser: DataParserProtocol
 
-    init(
+    public init(
         apiManager: APIManagerProtocol = APIManager(),
         parser: DataParserProtocol = DataParser()
     ) {
@@ -21,9 +21,14 @@ final class RequestManager: RequestManagerProtocol {
         self.parser = parser
     }
 
-    func perform<T: Decodable>(_ request: any RequestProtocol) async throws -> T  {
+    public func perform<T: Decodable>(_ request: any RequestProtocol) async throws -> T  {
         let data = try await apiManager.perform(request)
-        let decoded: T = try parser.parse(data: data)
-        return decoded
+        do {
+            let decoded: T = try parser.parse(data: data)
+            return decoded
+        } catch {
+            print("Decoder error")
+            throw NetworkError.invalidServerResponse
+        }
     }
 }

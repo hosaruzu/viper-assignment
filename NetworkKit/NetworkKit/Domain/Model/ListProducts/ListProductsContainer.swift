@@ -5,6 +5,6 @@
 //  Created by Artem Tebenkov on 29.06.2024.
 //
 
-struct ListProductsContainer: Decodable {
-    let advertisements: [ListProduct]
+public struct ListProductsContainer: Decodable {
+   public let advertisements: [ListProduct]
 }

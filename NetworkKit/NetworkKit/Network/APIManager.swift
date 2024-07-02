@@ -5,19 +5,19 @@
 //  Created by Artem Tebenkov on 29.06.2024.
 //
 
-protocol APIManagerProtocol {
+public protocol APIManagerProtocol {
     func perform(_ request: RequestProtocol) async throws -> Data
 }
 
-class APIManager: APIManagerProtocol {
+public class APIManager: APIManagerProtocol {
 
     private let urlSession: URLSession
 
-    init(urlSession: URLSession = .shared) {
+   public init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
 
-    func perform(_ request: RequestProtocol) async throws -> Data {
+    public func perform(_ request: RequestProtocol) async throws -> Data {
         let (data, response) = try await urlSession.data(for: request.createURLReques())
         guard let httpResonse = response as? HTTPURLResponse,
               httpResonse.statusCode == 200
