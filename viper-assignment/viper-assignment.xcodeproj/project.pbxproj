@@ -74,8 +74,6 @@
 		0C8146712C2665D90034AD6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C8146762C2665D90034AD6D /* viper-assignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "viper-assignmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C81469C2C299C510034AD6D /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
-		0C8146B32C299FA90034AD6D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C8146E32C29A30A0034AD6D /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146EB2C29A7D80034AD6D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0C8146ED2C29A7E40034AD6D /* ListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewProtocol.swift; sourceTree = "<group>"; };
 		0C8146EF2C29A8D40034AD6D /* TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionHandler.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 				0C81465F2C2665D80034AD6D /* viper-assignment */,
 				0C8146792C2665D90034AD6D /* viper-assignmentTests */,
 				0C81465E2C2665D80034AD6D /* Products */,
-				0C8146B22C299FA90034AD6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,15 +169,6 @@
 				0C8148472C3420540034AD6D /* Tests */,
 			);
 			path = "viper-assignmentTests";
-			sourceTree = "<group>";
-		};
-		0C8146B22C299FA90034AD6D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0C8146E32C29A30A0034AD6D /* NetworkKit.framework */,
-				0C8146B32C299FA90034AD6D /* Utilities.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0C8146C42C29A21B0034AD6D /* Modules */ = {
