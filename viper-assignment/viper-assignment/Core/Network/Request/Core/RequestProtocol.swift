@@ -5,6 +5,8 @@
 //  Created by Artem Tebenkov on 29.06.2024.
 //
 
+import Foundation
+
 public protocol RequestProtocol {
     var path: String { get }
 }
@@ -31,7 +33,7 @@ extension RequestProtocol {
         guard let url = components.url else { throw NetworkError.invalidURL }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = requestType.rawValue
-        
+
         return urlRequest
     }
 }

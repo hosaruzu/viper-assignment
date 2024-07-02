@@ -5,6 +5,8 @@
 //  Created by Artem Tebenkov on 29.06.2024.
 //
 
+import Foundation
+
 public struct ListProduct: Decodable {
     public let id: String
     public let title: String

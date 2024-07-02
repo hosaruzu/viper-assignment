@@ -5,8 +5,6 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
-import NetworkKit
-
 protocol ListInteractorInput: AnyObject {
     func obtainProductsList() async throws
 }

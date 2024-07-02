@@ -5,8 +5,6 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
-import NetworkKit
-
 final class ListInteractor {
 
     // MARK: - Dependencies

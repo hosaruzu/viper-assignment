@@ -5,6 +5,8 @@
 //  Created by Artem Tebenkov on 29.06.2024.
 //
 
+import Foundation
+
 public protocol DataParserProtocol {
     func parse<T: Decodable>(data: Data) throws -> T
 }

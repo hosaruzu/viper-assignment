@@ -21,7 +21,7 @@ public final class RequestManager: RequestManagerProtocol {
         self.parser = parser
     }
 
-    public func perform<T: Decodable>(_ request: any RequestProtocol) async throws -> T  {
+    public func perform<T: Decodable>(_ request: any RequestProtocol) async throws -> T {
         let data = try await apiManager.perform(request)
         do {
             let decoded: T = try parser.parse(data: data)
