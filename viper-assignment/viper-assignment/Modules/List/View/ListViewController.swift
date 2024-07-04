@@ -78,11 +78,16 @@ private extension ListViewController {
 
 extension ListViewController: ListViewPresentable {
     func set(state: ListViewState) {
-        switch state {
-        case .loading: break
-        case .success: break
-        case .error: break
-        }
+            switch state {
+            case .loading:
+                loaderView.start()
+            case .success(let data):
+                loaderView.stop()
+                collectionView.setupWith(data)
+            case .error:
+                loaderView.stop()
+                errorView.show()
+            }
     }
 }
 
@@ -98,6 +103,8 @@ extension ListViewController: CollectionViewDelegate {
 
 extension ListViewController: ErrorViewDelegate {
     func didTapButton() {
+        output.viewDidLoad()
+        loaderView.start()
         errorView.hide()
     }
 }

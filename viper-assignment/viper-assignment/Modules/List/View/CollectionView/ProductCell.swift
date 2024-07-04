@@ -5,6 +5,7 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
+import Kingfisher
 import UIKit
 
 final class ProductCell: UICollectionViewCell {
@@ -32,14 +33,23 @@ final class ProductCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func prepareForReuse() {
+        productImageView.image = nil
+        productNameLabel.text = nil
+        productPriceLabel.text = nil
+        cityLabel.text = nil
+        dateLabel.text = nil
+    }
+
     // MARK: - Public
 
-    func setup() {
-        productImageView.image = .phoneMock
-        productNameLabel.text = "Смартфон iPhone 15 Pro Max"
-        productPriceLabel.text = "95000 RUB"
-        cityLabel.text = "Moscow"
-        dateLabel.text = "2024-02-04"
+    func setup(with product: Product) {
+        setupImage(with: product.imageUrl)
+        productImageView.kf.indicatorType = .activity
+        productNameLabel.text = product.title
+        productPriceLabel.text = product.price
+        cityLabel.text = product.location
+        dateLabel.text = product.createdDate
     }
 }
 
@@ -53,6 +63,7 @@ private extension ProductCell {
         vStack.addArrangedSubview(cityLabel)
         vStack.addArrangedSubview(dateLabel)
 
+        contentView.addSubview(productImageView)
         contentView.addSubview(vStack)
     }
 
@@ -66,12 +77,20 @@ private extension ProductCell {
 
     func setupConstraints() {
         productImageView.snp.makeConstraints {
+            $0.top.horizontalEdges.equalToSuperview()
+            $0.width.equalToSuperview()
             $0.height.equalTo(Spec.Image.height)
         }
 
         vStack.snp.makeConstraints {
-            $0.leading.top.trailing.equalToSuperview()
+            $0.top.equalTo(productImageView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
         }
+    }
+
+    private func setupImage(with url: URL?) {
+        let processor = ResizingImageProcessor(referenceSize: Spec.Image.scalingSize)
+        productImageView.kf.setImage(with: url, options: [.processor(processor)])
     }
 }
 
@@ -84,5 +103,6 @@ private enum Spec {
 
    enum Image {
        static let height: CGFloat = 170
+       static let scalingSize: CGSize = CGSize(width: 100, height: 170)
     }
 }

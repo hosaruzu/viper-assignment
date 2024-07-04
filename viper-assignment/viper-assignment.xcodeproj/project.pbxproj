@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7E4BEB2C357E780057BD66 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4BEA2C357E780057BD66 /* Persistence.swift */; };
+		0C7E4C022C35B1660057BD66 /* ListProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C012C35B1660057BD66 /* ListProductRepository.swift */; };
+		0C7E4C052C35B26F0057BD66 /* viper_assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C032C35B26F0057BD66 /* viper_assignment.xcdatamodeld */; };
+		0C7E4C0B2C36D2D60057BD66 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C0A2C36D2D60057BD66 /* Product.swift */; };
+		0C7E4C0F2C36EA870057BD66 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0C7E4C0E2C36EA870057BD66 /* Kingfisher */; };
 		0C8146612C2665D80034AD6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146602C2665D80034AD6D /* AppDelegate.swift */; };
 		0C8146632C2665D80034AD6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146622C2665D80034AD6D /* SceneDelegate.swift */; };
-		0C81466B2C2665D80034AD6D /* viper_assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146692C2665D80034AD6D /* viper_assignment.xcdatamodeld */; };
 		0C81466D2C2665D90034AD6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C81466C2C2665D90034AD6D /* Assets.xcassets */; };
 		0C8146702C2665D90034AD6D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0C81466F2C2665D90034AD6D /* Base */; };
 		0C81469D2C299C510034AD6D /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0C81469C2C299C510034AD6D /* swiftlint.yml */; };
@@ -65,10 +69,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C7E4BEA2C357E780057BD66 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		0C7E4C012C35B1660057BD66 /* ListProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductRepository.swift; sourceTree = "<group>"; };
+		0C7E4C042C35B26F0057BD66 /* viper_assignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = viper_assignment.xcdatamodel; sourceTree = "<group>"; };
+		0C7E4C0A2C36D2D60057BD66 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0C81465D2C2665D80034AD6D /* viper-assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viper-assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146602C2665D80034AD6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C8146622C2665D80034AD6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C81466A2C2665D80034AD6D /* viper_assignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = viper_assignment.xcdatamodel; sourceTree = "<group>"; };
 		0C81466C2C2665D90034AD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C81466F2C2665D90034AD6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C8146712C2665D90034AD6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7E4C0F2C36EA870057BD66 /* Kingfisher in Frameworks */,
 				0C81480A2C341D870034AD6D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +141,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C7E4C082C36CE430057BD66 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0C7E4C012C35B1660057BD66 /* ListProductRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0C7E4C092C36D2930057BD66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C7E4C0A2C36D2D60057BD66 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C7E4C0D2C36EA870057BD66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0C8146542C2665D80034AD6D = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +171,7 @@
 				0C81465F2C2665D80034AD6D /* viper-assignment */,
 				0C8146792C2665D90034AD6D /* viper-assignmentTests */,
 				0C81465E2C2665D80034AD6D /* Products */,
+				0C7E4C0D2C36EA870057BD66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,7 +219,6 @@
 				0C81466C2C2665D90034AD6D /* Assets.xcassets */,
 				0C81466E2C2665D90034AD6D /* LaunchScreen.storyboard */,
 				0C8146712C2665D90034AD6D /* Info.plist */,
-				0C8146692C2665D80034AD6D /* viper_assignment.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -204,6 +235,7 @@
 		0C8146C72C29A26C0034AD6D /* List */ = {
 			isa = PBXGroup;
 			children = (
+				0C7E4C092C36D2930057BD66 /* Model */,
 				0C8146E62C29A76B0034AD6D /* Assembly */,
 				0C8146E72C29A7750034AD6D /* View */,
 				0C8146E82C29A77C0034AD6D /* Interactor */,
@@ -335,19 +367,11 @@
 		0C81480F2C341E910034AD6D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0C81481E2C341EA30034AD6D /* Domain */,
 				0C8148232C341EA30034AD6D /* API */,
 				0C8148192C341EA30034AD6D /* Parser */,
 				0C8148172C341EA30034AD6D /* Request */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		0C8148112C341EA30034AD6D /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		0C8148132C341EA30034AD6D /* List */ = {
@@ -362,7 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				0C8148462C34203B0034AD6D /* Core */,
-				0C8148112C341EA30034AD6D /* Detail */,
 				0C8148132C341EA30034AD6D /* List */,
 			);
 			path = Request;
@@ -391,14 +414,6 @@
 				0C81481C2C341EA30034AD6D /* ListProducts */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		0C81481E2C341EA30034AD6D /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				0C81481D2C341EA30034AD6D /* Model */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		0C8148232C341EA30034AD6D /* API */ = {
@@ -476,10 +491,22 @@
 		0C8148492C3420910034AD6D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0C81480E2C341E8B0034AD6D /* Utilities */,
+				0C8148632C344FEC0034AD6D /* CoreData */,
 				0C81480F2C341E910034AD6D /* Network */,
+				0C7E4C082C36CE430057BD66 /* Repository */,
+				0C81480E2C341E8B0034AD6D /* Utilities */,
+				0C81481D2C341EA30034AD6D /* Model */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		0C8148632C344FEC0034AD6D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0C7E4BEA2C357E780057BD66 /* Persistence.swift */,
+				0C7E4C032C35B26F0057BD66 /* viper_assignment.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +528,7 @@
 			name = "viper-assignment";
 			packageProductDependencies = (
 				0C8148092C341D870034AD6D /* SnapKit */,
+				0C7E4C0E2C36EA870057BD66 /* Kingfisher */,
 			);
 			productName = "viper-assignment";
 			productReference = 0C81465D2C2665D80034AD6D /* viper-assignment.app */;
@@ -554,6 +582,7 @@
 			mainGroup = 0C8146542C2665D80034AD6D;
 			packageReferences = (
 				0C8148082C341D690034AD6D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0C7E4C0C2C36EA560057BD66 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 0C81465E2C2665D80034AD6D /* Products */;
 			projectDirPath = "";
@@ -629,16 +658,19 @@
 				0C8146FC2C29ABFE0034AD6D /* ListAssembly.swift in Sources */,
 				0C8148272C341EA30034AD6D /* RequestProtocol.swift in Sources */,
 				0C8148382C341EB40034AD6D /* VALabel.swift in Sources */,
+				0C7E4C0B2C36D2D60057BD66 /* Product.swift in Sources */,
+				0C7E4C022C35B1660057BD66 /* ListProductRepository.swift in Sources */,
+				0C7E4C052C35B26F0057BD66 /* viper_assignment.xcdatamodeld in Sources */,
 				0C8146F62C29AA700034AD6D /* ListInteractorProtocol.swift in Sources */,
 				0C81470F2C29B9B90034AD6D /* CollectionView.swift in Sources */,
 				0C81482B2C341EA30034AD6D /* ListProductsContainer.swift in Sources */,
 				0C8147092C29AF970034AD6D /* DetailPresenter.swift in Sources */,
 				0C81483A2C341EB40034AD6D /* ReuseIdentifiable.swift in Sources */,
 				0C81482F2C341EA30034AD6D /* RequestManager.swift in Sources */,
-				0C81466B2C2665D80034AD6D /* viper_assignment.xcdatamodeld in Sources */,
 				0C8146EE2C29A7E40034AD6D /* ListViewProtocol.swift in Sources */,
 				0C81470D2C29B0C10034AD6D /* DetailAssembly.swift in Sources */,
 				0C8148262C341EA30034AD6D /* HTTPScheme.swift in Sources */,
+				0C7E4BEB2C357E780057BD66 /* Persistence.swift in Sources */,
 				0C81470B2C29B0210034AD6D /* DetailModuleInput.swift in Sources */,
 				0C8146F42C29AA5B0034AD6D /* ListInteractor.swift in Sources */,
 				0C8147122C29BAB80034AD6D /* ProductCell.swift in Sources */,
@@ -950,6 +982,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0C7E4C0C2C36EA560057BD66 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 		0C8148082C341D690034AD6D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -961,6 +1001,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C7E4C0E2C36EA870057BD66 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C7E4C0C2C36EA560057BD66 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		0C8148092C341D870034AD6D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0C8148082C341D690034AD6D /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -969,13 +1014,14 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		0C8146692C2665D80034AD6D /* viper_assignment.xcdatamodeld */ = {
+		0C7E4C032C35B26F0057BD66 /* viper_assignment.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0C81466A2C2665D80034AD6D /* viper_assignment.xcdatamodel */,
+				0C7E4C042C35B26F0057BD66 /* viper_assignment.xcdatamodel */,
 			);
-			currentVersion = 0C81466A2C2665D80034AD6D /* viper_assignment.xcdatamodel */;
-			path = viper_assignment.xcdatamodeld;
+			currentVersion = 0C7E4C042C35B26F0057BD66 /* viper_assignment.xcdatamodel */;
+			name = viper_assignment.xcdatamodeld;
+			path = "/Users/artem.tebenkov/Developer/Projects/viper-assignment/viper-assignment/viper-assignment/Core/CoreData/viper_assignment.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

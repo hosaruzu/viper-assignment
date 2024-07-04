@@ -5,6 +5,9 @@
 //  Created by Artem Tebenkov on 24.06.2024.
 //
 
+import Foundation
+
+@MainActor
 final class ListPresenter {
 
     unowned var view: ListViewInput
@@ -28,23 +31,27 @@ extension ListPresenter: ListViewOutput {
 
     func viewDidLoad() {
         Task {
-           try await interactor.obtainProductsList()
+            view.set(state: .loading)
+            try await interactor.obtainProductsList()
         }
     }
 
     func didTapOnItem() {
-       detailScreen = router.pushToDetail()
+        detailScreen = router.pushToDetail()
     }
 }
 
 extension ListPresenter: ListInteractorOutput {
 
-    func setSuccessObtainData(_ data: ListProductsContainer) {
-        print(data)
-        view.set(state: .success)
+    func setSuccessObtainData(_ data: [Product]) {
+        Task {
+            view.set(state: .success(data: data))
+        }
     }
 
     func setFailedObtainData(error: Error) {
-        view.set(state: .error)
+        Task {
+            view.set(state: .error(description: error.localizedDescription))
+        }
     }
 }

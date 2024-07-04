@@ -4,6 +4,7 @@
 //
 //  Created by Artem Tebenkov on 24.06.2024.
 //
+import Foundation
 
 final class ListInteractor {
 
@@ -28,9 +29,14 @@ extension ListInteractor: ListInteractorInput {
     func obtainProductsList() async {
         do {
             let data = try await repository.fetchListProducts()
-            output?.setSuccessObtainData(data)
+            let products = preparedData(data)
+            output?.setSuccessObtainData(products)
         } catch {
             output?.setFailedObtainData(error: error)
         }
+    }
+
+    func preparedData(_ inputs: [ListProduct]) -> [Product] {
+        return inputs.map { Product($0) }
     }
 }

@@ -22,6 +22,6 @@ protocol ListViewPresentable: ListViewInput, TransitionHandler {
 
 enum ListViewState {
     case loading
-    case success
-    case error
+    case success(data: [Product])
+    case error(description: String)
 }
