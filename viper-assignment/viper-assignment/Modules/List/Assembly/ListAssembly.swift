@@ -7,9 +7,9 @@
 
 final class ListAssembly {
 
-    static func build(with view: ListViewPresentable) {
-        let requestManager = RequestManager()
-        let interactor = ListInteractor(requestManger: requestManager)
+    @MainActor static func build(with view: ListViewPresentable) {
+        let repository = ListProductRepository()
+        let interactor = ListInteractor(repository: repository)
         let router = ListRouter()
         let presenter = ListPresenter(
             view: view,

@@ -10,6 +10,6 @@ protocol ListInteractorInput: AnyObject {
 }
 
 protocol ListInteractorOutput: AnyObject {
-    func setSuccessObtainData(_ data: ListProductsContainer)
+    func setSuccessObtainData(_ data: [ListProduct])
     func setFailedObtainData(error: Error)
 }

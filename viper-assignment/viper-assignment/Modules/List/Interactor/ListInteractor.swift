@@ -9,7 +9,7 @@ final class ListInteractor {
 
     // MARK: - Dependencies
 
-    private let requestManager: RequestManager
+    private let repository: ListProductRepositoryProtocol
 
     // MARK: - Interactor output
 
@@ -17,16 +17,20 @@ final class ListInteractor {
 
     // MARK: - Init
 
-    init(requestManger: RequestManager) {
-        self.requestManager = requestManger
+    init(repository: ListProductRepositoryProtocol) {
+        self.repository = repository
     }
 }
 
 // MARK: - ListInteractorInput
 
 extension ListInteractor: ListInteractorInput {
-    func obtainProductsList() async throws {
-        let data: ListProductsContainer = try await requestManager.perform(ListRequest.getProductList)
-        output?.setSuccessObtainData(data)
+    func obtainProductsList() async {
+        do {
+            let data = try await repository.fetchListProducts()
+            output?.setSuccessObtainData(data)
+        } catch {
+            output?.setFailedObtainData(error: error)
+        }
     }
 }
