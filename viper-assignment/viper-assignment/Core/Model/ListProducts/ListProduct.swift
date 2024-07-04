@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ListProduct: Decodable {
+public struct ListProduct: Decodable, Hashable {
     public let id: String
     public let title: String
     public let price: String
