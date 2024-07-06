@@ -16,6 +16,8 @@ final class ListPresenter {
 
     private weak var detailScreen: DetailModuleInput?
 
+    private var data: [Product] = []
+
     init(
         view: ListViewInput,
         interactor: ListInteractorInput,
@@ -39,12 +41,24 @@ extension ListPresenter: ListViewOutput {
     func didTapOnItem() {
         detailScreen = router.pushToDetail()
     }
+
+    func didSearchResultUpdateWith(_ text: String?) {
+        guard let text,
+              !text.isEmpty
+        else {
+            view.set(state: .success(data: self.data))
+            return
+        }
+        let data = data.filter { $0.title.lowercased().contains(text.lowercased()) }
+        view.set(state: .success(data: data))
+    }
 }
 
 extension ListPresenter: ListInteractorOutput {
 
     func setSuccessObtainData(_ data: [Product]) {
         Task {
+            self.data = data
             view.set(state: .success(data: data))
         }
     }
@@ -52,6 +66,13 @@ extension ListPresenter: ListInteractorOutput {
     func setFailedObtainData(error: Error) {
         Task {
             view.set(state: .error(description: error.localizedDescription))
+        }
+    }
+
+    func didTriggerRefresh() {
+        Task {
+            view.set(state: .loading)
+            try await interactor.obtainProductsList()
         }
     }
 }

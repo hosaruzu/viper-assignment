@@ -9,6 +9,7 @@ import UIKit
 
 protocol CollectionViewDelegate: AnyObject {
     func didSelectItem()
+    func didTriggerRefresh()
 }
 
 final class CollectionView: UIView {
@@ -16,6 +17,7 @@ final class CollectionView: UIView {
     // MARK: - Subviews
 
     private var collectionView: UICollectionView!
+    private let refreshControl = UIRefreshControl()
 
     // MARK: - Collection View Data Source
 
@@ -35,6 +37,7 @@ final class CollectionView: UIView {
         setupLayout()
         setupDataSource()
         setupSnapshot()
+        setupRefreshControl()
     }
 
     required init?(coder: NSCoder) {
@@ -45,6 +48,7 @@ final class CollectionView: UIView {
         self.data = data
 
         setupSnapshot()
+        refreshControl.endRefreshing()
     }
 }
 
@@ -58,6 +62,20 @@ private extension CollectionView {
         )
         collectionView.register(ProductCell.self)
         collectionView.delegate = self
+
+
+    }
+
+    func setupRefreshControl() {
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(triggerRefreshControl), for: .valueChanged)
+    }
+
+    @objc
+    func triggerRefreshControl() {
+        data = []
+        setupSnapshot()
+        delegate?.didTriggerRefresh()
     }
 
     func setupLayout() {

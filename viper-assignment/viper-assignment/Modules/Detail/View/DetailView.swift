@@ -76,6 +76,7 @@ private extension DetailView {
         vStack.addArrangedSubview(detailPhoneLabel)
 
         vStack.setCustomSpacing(0, after: detailMailLabel)
+        vStack.setCustomSpacing(12, after: detailAddressLabel)
         detailDescriptionBodyLabel.numberOfLines = 0
 
         addSubview(detailImageView)

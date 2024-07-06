@@ -45,7 +45,6 @@ final class ProductCell: UICollectionViewCell {
 
     func setup(with product: Product) {
         setupImage(with: product.imageUrl)
-        productImageView.kf.indicatorType = .activity
         productNameLabel.text = product.title
         productPriceLabel.text = product.price
         cityLabel.text = product.location
@@ -71,8 +70,8 @@ private extension ProductCell {
         vStack.axis = .vertical
         vStack.spacing = Spec.Stack.defaultSpacing
         vStack.setCustomSpacing(0, after: cityLabel)
-
-        productNameLabel.numberOfLines = 0
+        vStack.setCustomSpacing(4, after: productNameLabel)
+        productNameLabel.numberOfLines = 2
     }
 
     func setupConstraints() {
@@ -91,6 +90,7 @@ private extension ProductCell {
     private func setupImage(with url: URL?) {
         let processor = ResizingImageProcessor(referenceSize: Spec.Image.scalingSize)
         productImageView.kf.setImage(with: url, options: [.processor(processor)])
+        productImageView.kf.indicatorType = .activity
     }
 }
 
@@ -103,6 +103,6 @@ private enum Spec {
 
    enum Image {
        static let height: CGFloat = 170
-       static let scalingSize: CGSize = CGSize(width: 100, height: 170)
+       static let scalingSize: CGSize = CGSize(width: 100, height: 100)
     }
 }
