@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ListViewController: UIViewController {
+final class ListViewController: UIViewController, UISearchControllerDelegate {
 
     // MARK: - View Output
 
@@ -16,9 +16,10 @@ final class ListViewController: UIViewController {
 
     // MARK: - Subviews
 
-    private var collectionView = CollectionView()
-    private var loaderView = LoaderView()
-    private var errorView = ErrorView()
+    private let collectionView = CollectionView()
+    private let loaderView = LoaderView()
+    private let errorView = ErrorView()
+    private let searchController = UISearchController()
 
     // MARK: - Lifecyce
 
@@ -36,6 +37,8 @@ final class ListViewController: UIViewController {
 
 private extension ListViewController {
     func setupAppearance() {
+        navigationItem.searchController = searchController
+
         title = "Products"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
@@ -71,6 +74,8 @@ private extension ListViewController {
     func setupDelegates() {
         collectionView.delegate = self
         errorView.delegate = self
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
     }
 }
 
@@ -78,11 +83,16 @@ private extension ListViewController {
 
 extension ListViewController: ListViewPresentable {
     func set(state: ListViewState) {
-        switch state {
-        case .loading: break
-        case .success: break
-        case .error: break
-        }
+            switch state {
+            case .loading:
+                loaderView.start()
+            case .success(let data):
+                loaderView.stop()
+                collectionView.setupWith(data)
+            case .error:
+                loaderView.stop()
+                errorView.show()
+            }
     }
 }
 
@@ -92,12 +102,25 @@ extension ListViewController: CollectionViewDelegate {
     func didSelectItem() {
         output.didTapOnItem()
     }
+
+    func didTriggerRefresh() {
+        set(state: .loading)
+        output.didTriggerRefresh()
+    }
 }
 
 // MARK: - ErrorViewDelegate
 
 extension ListViewController: ErrorViewDelegate {
     func didTapButton() {
+        output.viewDidLoad()
+        loaderView.start()
         errorView.hide()
+    }
+}
+
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        output.didSearchResultUpdateWith(searchController.searchBar.text)
     }
 }

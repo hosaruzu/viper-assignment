@@ -9,6 +9,7 @@ import UIKit
 
 protocol CollectionViewDelegate: AnyObject {
     func didSelectItem()
+    func didTriggerRefresh()
 }
 
 final class CollectionView: UIView {
@@ -16,12 +17,13 @@ final class CollectionView: UIView {
     // MARK: - Subviews
 
     private var collectionView: UICollectionView!
+    private let refreshControl = UIRefreshControl()
 
     // MARK: - Collection View Data Source
 
     private enum Section { case main }
-    private let mockData = [1, 2, 3, 4, 5, 6]
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Int>!
+    private var data: [Product] = []
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Product>!
 
     // MARK: - ListViewDelegate
 
@@ -35,10 +37,18 @@ final class CollectionView: UIView {
         setupLayout()
         setupDataSource()
         setupSnapshot()
+        setupRefreshControl()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupWith(_ data: [Product]) {
+        self.data = data
+
+        setupSnapshot()
+        refreshControl.endRefreshing()
     }
 }
 
@@ -52,6 +62,20 @@ private extension CollectionView {
         )
         collectionView.register(ProductCell.self)
         collectionView.delegate = self
+
+
+    }
+
+    func setupRefreshControl() {
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(triggerRefreshControl), for: .valueChanged)
+    }
+
+    @objc
+    func triggerRefreshControl() {
+        data = []
+        setupSnapshot()
+        delegate?.didTriggerRefresh()
     }
 
     func setupLayout() {
@@ -62,18 +86,18 @@ private extension CollectionView {
     }
 
     func setupDataSource() {
-        dataSource = .init(collectionView: collectionView, cellProvider: { collectionView, indexPath, _ in
+        dataSource = .init(collectionView: collectionView, cellProvider: { collectionView, indexPath, product in
             let cell = collectionView.dequeue(ProductCell.self, for: indexPath)
-            cell.setup()
+            cell.setup(with: product)
             return cell
         })
     }
 
     private func setupSnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Product>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(mockData, toSection: .main)
-        dataSource.apply(snapshot)
+        snapshot.appendItems(data)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 

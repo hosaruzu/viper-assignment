@@ -35,7 +35,7 @@ final class ListProductRepository: ListProductRepositoryProtocol {
             }
             return cached
                 .map { getModel(from: $0) }
-                .sorted { $0.id < $1.id }
+                .shuffled()
         } catch {
             print("Error fetching products: \(error.localizedDescription)")
             throw error
@@ -43,7 +43,6 @@ final class ListProductRepository: ListProductRepositoryProtocol {
     }
 
     private func loadCachedProducts() throws -> [ListProductsEntity] {
-        print("Load from Core Data")
         let request: NSFetchRequest<ListProductsEntity> = ListProductsEntity.fetchRequest()
         return try persistenceController.viewContext.fetch(request)
     }
