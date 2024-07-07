@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CollectionViewDelegate: AnyObject {
-    func didSelectItem()
+    func didSelectItem(_ id: String)
     func didTriggerRefresh()
 }
 
@@ -62,8 +62,6 @@ private extension CollectionView {
         )
         collectionView.register(ProductCell.self)
         collectionView.delegate = self
-
-
     }
 
     func setupRefreshControl() {
@@ -106,6 +104,7 @@ private extension CollectionView {
 extension CollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        delegate?.didSelectItem()
+        let id = data[indexPath.item].id
+        delegate?.didSelectItem(id)
     }
 }

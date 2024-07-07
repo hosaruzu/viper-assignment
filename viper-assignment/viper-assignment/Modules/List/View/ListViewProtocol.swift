@@ -13,7 +13,7 @@ protocol ListViewInput: AnyObject {
 
 protocol ListViewOutput: AnyObject {
     func viewDidLoad()
-    func didTapOnItem()
+    func didTapOnItem(_ id: String)
     func didTriggerRefresh()
     func didSearchResultUpdateWith(_ text: String?)
 }

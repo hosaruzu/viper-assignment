@@ -28,7 +28,6 @@ final class ListProductRepository: ListProductRepositoryProtocol {
         do {
             let cached = try loadCachedProducts()
             guard !cached.isEmpty else {
-                print("Load from internet")
                 let products: ListProductsContainer = try await requestManager.perform(ListRequest.getProductList)
                 saveToCache(products.advertisements)
                 return products.advertisements
