@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailViewInput: AnyObject {
-    func setup(with: String)
+    func set(state: DetailViewState)
 }
 
 protocol DetailViewOutput: AnyObject {
@@ -17,4 +17,10 @@ protocol DetailViewOutput: AnyObject {
 
 protocol DetailViewPresentable: DetailViewInput {
     var output: DetailViewOutput! { get set }
+}
+
+enum DetailViewState {
+    case loading
+    case success(data: DetailProduct)
+    case error(description: String)
 }

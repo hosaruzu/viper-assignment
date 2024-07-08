@@ -16,6 +16,7 @@ final class DetailViewController: UIViewController {
     // MARK: - Subviews
 
     private let detailView = DetailView()
+    private let loaderView = LoaderView()
 
     // MARK: - Lifecycle
 
@@ -26,6 +27,11 @@ final class DetailViewController: UIViewController {
         setupSubviews()
         setupConstraints()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.largeTitleDisplayMode = .never
+    }
 }
 
 // MARK: - Setup appearance
@@ -33,7 +39,6 @@ final class DetailViewController: UIViewController {
 private extension DetailViewController {
     func setupAppearance() {
         view.backgroundColor = .systemBackground
-        title = "Item name"
     }
 }
 
@@ -42,11 +47,15 @@ private extension DetailViewController {
 private extension DetailViewController {
     func setupSubviews() {
         view.addSubview(detailView)
+        view.addSubview(loaderView)
     }
 
     func setupConstraints() {
         detailView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        loaderView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 }
@@ -54,7 +63,15 @@ private extension DetailViewController {
 // MARK: - DetailViewPresentable
 
 extension DetailViewController: DetailViewPresentable {
-    func setup(with: String) {
-        //
+    func set(state: DetailViewState) {
+        switch state {
+        case .loading:
+            loaderView.start()
+        case .success(let data):
+            loaderView.stop()
+            detailView.setup(with: data)
+        case .error(let description):
+            print(description)
+        }
     }
 }

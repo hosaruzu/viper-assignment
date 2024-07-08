@@ -31,6 +31,12 @@ final class ListViewController: UIViewController, UISearchControllerDelegate {
         setupConstraints()
         setupDelegates()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+    }
 }
 
 // MARK: - Setup appearance
@@ -38,9 +44,7 @@ final class ListViewController: UIViewController, UISearchControllerDelegate {
 private extension ListViewController {
     func setupAppearance() {
         navigationItem.searchController = searchController
-
         title = "Products"
-        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
     }
 }
@@ -52,7 +56,6 @@ private extension ListViewController {
         view.addSubview(collectionView)
         view.addSubview(loaderView)
         view.addSubview(errorView)
-
     }
 
     private func setupConstraints() {
@@ -99,8 +102,8 @@ extension ListViewController: ListViewPresentable {
 // MARK: - CollectionViewDelegate
 
 extension ListViewController: CollectionViewDelegate {
-    func didSelectItem() {
-        output.didTapOnItem()
+    func didSelectItem(_ id: String) {
+        output.didTapOnItem(id)
     }
 
     func didTriggerRefresh() {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class DetailView: UIView {
 
@@ -34,7 +35,6 @@ final class DetailView: UIView {
         setupAppearance()
         setupSubviews()
         setupConstraints()
-        setup()
     }
 
     required init?(coder: NSCoder) {
@@ -42,16 +42,16 @@ final class DetailView: UIView {
     }
 
     // MARK: - Public
-    // Setup with mock data now, set real after creating network request
-    func setup() {
-        detailImageView.image = .phoneMock
-        detailPriceLabel.text = "95 000"
-        detailTitleLabel.text = "iPhone 15 Pro Max Space Gray"
-        detailAddressLabel.text = "DC, Linkoln memorial"
+
+    func setup(with product: DetailProduct) {
+        detailImageView.kf.setImage(with: URL(string: product.imageUrl))
+        detailPriceLabel.text = product.price
+        detailTitleLabel.text = product.title
+        detailAddressLabel.text = product.location
         detailDescriptionLabel.text = "Description"
-        detailDescriptionBodyLabel.text = "iPhone 15 Pro Max Space Gray description will be here"
-        detailMailLabel.text = "Почта: somemail@example.com"
-        detailPhoneLabel.text = "Телефон: 8 999 999 99 99"
+        detailDescriptionBodyLabel.text = product.description
+        detailMailLabel.text = product.email
+        detailPhoneLabel.text = product.phoneNumber
     }
 }
 

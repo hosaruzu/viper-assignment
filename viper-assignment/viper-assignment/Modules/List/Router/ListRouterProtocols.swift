@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListRouterInput: AnyObject {
-    func pushToDetail() -> DetailModuleInput
+    func pushToDetail(_ id: String) -> DetailModuleInput
 }

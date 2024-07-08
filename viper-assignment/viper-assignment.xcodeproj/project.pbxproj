@@ -12,6 +12,11 @@
 		0C7E4C052C35B26F0057BD66 /* viper_assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C032C35B26F0057BD66 /* viper_assignment.xcdatamodeld */; };
 		0C7E4C0B2C36D2D60057BD66 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C0A2C36D2D60057BD66 /* Product.swift */; };
 		0C7E4C0F2C36EA870057BD66 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0C7E4C0E2C36EA870057BD66 /* Kingfisher */; };
+		0C7E4C152C39186A0057BD66 /* DetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C142C39186A0057BD66 /* DetailRequest.swift */; };
+		0C7E4C172C3919000057BD66 /* DetailProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C162C3919000057BD66 /* DetailProductRepository.swift */; };
+		0C7E4C1A2C3927E30057BD66 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C192C3927E20057BD66 /* DetailInteractor.swift */; };
+		0C7E4C1C2C3927ED0057BD66 /* DetailInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C1B2C3927ED0057BD66 /* DetailInteractorProtocol.swift */; };
+		0C7E4C1E2C394F850057BD66 /* DetailProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E4C1D2C394F850057BD66 /* DetailProduct.swift */; };
 		0C8146612C2665D80034AD6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146602C2665D80034AD6D /* AppDelegate.swift */; };
 		0C8146632C2665D80034AD6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8146622C2665D80034AD6D /* SceneDelegate.swift */; };
 		0C81466D2C2665D90034AD6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C81466C2C2665D90034AD6D /* Assets.xcassets */; };
@@ -73,6 +78,11 @@
 		0C7E4C012C35B1660057BD66 /* ListProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductRepository.swift; sourceTree = "<group>"; };
 		0C7E4C042C35B26F0057BD66 /* viper_assignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = viper_assignment.xcdatamodel; sourceTree = "<group>"; };
 		0C7E4C0A2C36D2D60057BD66 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		0C7E4C142C39186A0057BD66 /* DetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRequest.swift; sourceTree = "<group>"; };
+		0C7E4C162C3919000057BD66 /* DetailProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductRepository.swift; sourceTree = "<group>"; };
+		0C7E4C192C3927E20057BD66 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		0C7E4C1B2C3927ED0057BD66 /* DetailInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorProtocol.swift; sourceTree = "<group>"; };
+		0C7E4C1D2C394F850057BD66 /* DetailProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProduct.swift; sourceTree = "<group>"; };
 		0C81465D2C2665D80034AD6D /* viper-assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viper-assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8146602C2665D80034AD6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C8146622C2665D80034AD6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				0C7E4C012C35B1660057BD66 /* ListProductRepository.swift */,
+				0C7E4C162C3919000057BD66 /* DetailProductRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -162,6 +173,31 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C7E4C132C3918570057BD66 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0C7E4C142C39186A0057BD66 /* DetailRequest.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		0C7E4C182C3927CA0057BD66 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0C7E4C192C3927E20057BD66 /* DetailInteractor.swift */,
+				0C7E4C1B2C3927ED0057BD66 /* DetailInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0C7E4C1F2C394F8A0057BD66 /* DetailProduct */ = {
+			isa = PBXGroup;
+			children = (
+				0C7E4C1D2C394F850057BD66 /* DetailProduct.swift */,
+			);
+			path = DetailProduct;
 			sourceTree = "<group>";
 		};
 		0C8146542C2665D80034AD6D = {
@@ -249,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				0C8147012C29AE170034AD6D /* View */,
+				0C7E4C182C3927CA0057BD66 /* Interactor */,
 				0C8146FE2C29ADFB0034AD6D /* Presenter */,
 				0C8146FD2C29ADEE0034AD6D /* Assembly */,
 			);
@@ -387,6 +424,7 @@
 			children = (
 				0C8148462C34203B0034AD6D /* Core */,
 				0C8148132C341EA30034AD6D /* List */,
+				0C7E4C132C3918570057BD66 /* Detail */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -411,6 +449,7 @@
 		0C81481D2C341EA30034AD6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C7E4C1F2C394F8A0057BD66 /* DetailProduct */,
 				0C81481C2C341EA30034AD6D /* ListProducts */,
 			);
 			path = Model;
@@ -641,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7E4C172C3919000057BD66 /* DetailProductRepository.swift in Sources */,
 				0C8146FA2C29AB890034AD6D /* ListRouterProtocols.swift in Sources */,
 				0C8148372C341EB40034AD6D /* VAImageView.swift in Sources */,
 				0C81482E2C341EA30034AD6D /* NetworkError.swift in Sources */,
@@ -649,6 +689,7 @@
 				0C8146632C2665D80034AD6D /* SceneDelegate.swift in Sources */,
 				0C8148242C341EA30034AD6D /* APICostants.swift in Sources */,
 				0C8147732C2EA91A0034AD6D /* ErrorView.swift in Sources */,
+				0C7E4C1C2C3927ED0057BD66 /* DetailInteractorProtocol.swift in Sources */,
 				0C8147752C2EEBB10034AD6D /* DetailView.swift in Sources */,
 				0C8148392C341EB40034AD6D /* UICollectionView+Compositional Layout.swift in Sources */,
 				0C8147032C29AE650034AD6D /* DetailViewProtocol.swift in Sources */,
@@ -674,6 +715,7 @@
 				0C81470B2C29B0210034AD6D /* DetailModuleInput.swift in Sources */,
 				0C8146F42C29AA5B0034AD6D /* ListInteractor.swift in Sources */,
 				0C8147122C29BAB80034AD6D /* ProductCell.swift in Sources */,
+				0C7E4C1A2C3927E30057BD66 /* DetailInteractor.swift in Sources */,
 				0C8146F82C29AB2F0034AD6D /* ListRouter.swift in Sources */,
 				0C81482A2C341EA30034AD6D /* ListProduct.swift in Sources */,
 				0C8147712C2EA7590034AD6D /* LoaderView.swift in Sources */,
@@ -681,6 +723,8 @@
 				0C8148292C341EA30034AD6D /* DataParser.swift in Sources */,
 				0C81482C2C341EA30034AD6D /* APIManager.swift in Sources */,
 				0C8147072C29AF460034AD6D /* DetailViewController.swift in Sources */,
+				0C7E4C1E2C394F850057BD66 /* DetailProduct.swift in Sources */,
+				0C7E4C152C39186A0057BD66 /* DetailRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

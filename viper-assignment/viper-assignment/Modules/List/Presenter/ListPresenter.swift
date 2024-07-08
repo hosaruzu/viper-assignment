@@ -38,8 +38,8 @@ extension ListPresenter: ListViewOutput {
         }
     }
 
-    func didTapOnItem() {
-        detailScreen = router.pushToDetail()
+    func didTapOnItem(_ id: String) {
+        detailScreen = router.pushToDetail(id)
     }
 
     func didSearchResultUpdateWith(_ text: String?) {
