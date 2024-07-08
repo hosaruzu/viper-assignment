@@ -30,7 +30,7 @@ final class DetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.largeTitleDisplayMode = .never
+        setupNavigationAppearance()
     }
 }
 
@@ -39,6 +39,10 @@ final class DetailViewController: UIViewController {
 private extension DetailViewController {
     func setupAppearance() {
         view.backgroundColor = .systemBackground
+    }
+
+    func setupNavigationAppearance() {
+        navigationItem.largeTitleDisplayMode = .never
     }
 }
 

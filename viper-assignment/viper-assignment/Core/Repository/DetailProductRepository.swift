@@ -14,8 +14,12 @@ protocol DetailProductRepositoryProtocol {
 
 final class DetailProductRepository: DetailProductRepositoryProtocol {
 
+    // MARK: - Dependecies
+
     private let requestManager: RequestManagerProtocol
     private let persistenceController: PersistenceController
+
+    // MARK: - Init
 
     init(
         requestManager: RequestManagerProtocol = RequestManager(),
@@ -24,6 +28,8 @@ final class DetailProductRepository: DetailProductRepositoryProtocol {
         self.requestManager = requestManager
         self.persistenceController = persistenceController
     }
+
+    // MARK: - Fetching
 
     func fetchProduct(_ id: String) async throws -> DetailProduct {
         do {
@@ -42,6 +48,8 @@ final class DetailProductRepository: DetailProductRepositoryProtocol {
             throw error
         }
     }
+
+    // MARK: - Working with Core Data
 
     private func loadCachedDetailProducts() throws -> [DetailProductEntity] {
         let request: NSFetchRequest<DetailProductEntity> = DetailProductEntity.fetchRequest()

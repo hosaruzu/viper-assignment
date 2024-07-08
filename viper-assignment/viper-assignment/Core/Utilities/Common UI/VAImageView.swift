@@ -7,13 +7,13 @@
 
 import UIKit
 
-final public class VAImageView: UIImageView {
+final class VAImageView: UIImageView {
 
     // MARK: - Init
 
-    public init(isRounded: Bool) {
+    public init(cornerRadius: CGFloat = 0) {
        super.init(frame: .zero)
-        setup(isRounded: isRounded)
+        setup(cornerRadius: cornerRadius)
     }
 
     required init?(coder: NSCoder) {
@@ -22,13 +22,9 @@ final public class VAImageView: UIImageView {
 
     // MARK: - Setup
 
-    func setup(isRounded: Bool) {
+    func setup(cornerRadius: CGFloat) {
         clipsToBounds = true
         contentMode = .scaleAspectFill
-        if isRounded {
-            layer.cornerRadius = 8
-        } else {
-            layer.cornerRadius = 0
-        }
+        layer.cornerRadius = cornerRadius
     }
 }

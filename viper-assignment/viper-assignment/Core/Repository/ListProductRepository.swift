@@ -13,8 +13,12 @@ protocol ListProductRepositoryProtocol {
 
 final class ListProductRepository: ListProductRepositoryProtocol {
 
+    // MARK: - Dependencies
+
     private let requestManager: RequestManagerProtocol
     private let persistenceController: PersistenceController
+
+    // MARK: - Init
 
     init(
         requestManager: RequestManagerProtocol = RequestManager(),
@@ -23,6 +27,8 @@ final class ListProductRepository: ListProductRepositoryProtocol {
         self.requestManager = requestManager
         self.persistenceController = persistenceController
     }
+
+    // MARK: - Fetching
 
     func fetchListProducts() async throws -> [ListProduct] {
         do {
@@ -40,6 +46,8 @@ final class ListProductRepository: ListProductRepositoryProtocol {
             throw error
         }
     }
+
+    // MARK: - Working with Core Data
 
     private func loadCachedProducts() throws -> [ListProductsEntity] {
         let request: NSFetchRequest<ListProductsEntity> = ListProductsEntity.fetchRequest()

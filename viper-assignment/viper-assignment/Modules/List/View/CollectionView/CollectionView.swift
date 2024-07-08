@@ -20,7 +20,7 @@ final class CollectionView: UIView {
     private let emptyStateLabel: UILabel = {
         let label = UILabel()
         label.text = "No results"
-        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.font = .preferredFont(forTextStyle: .footnote)
         label.isHidden = true
         return label
     }()
@@ -32,7 +32,6 @@ final class CollectionView: UIView {
     private var data: [Product] = [] {
         didSet {
             emptyStateLabel.isHidden = !data.isEmpty
-            updateSnapshot()
         }
     }
     private var dataSource: UICollectionViewDiffableDataSource<Section, Product>!
@@ -59,6 +58,7 @@ final class CollectionView: UIView {
 
     func setupWith(_ data: [Product]) {
         self.data = data
+        updateSnapshot()
         refreshControl.endRefreshing()
     }
 }
@@ -82,7 +82,6 @@ private extension CollectionView {
 
     @objc
     func triggerRefreshControl() {
-        clearSnapshot()
         delegate?.didTriggerRefresh()
     }
 
@@ -110,13 +109,18 @@ private extension CollectionView {
     }
 
     private func updateSnapshot() {
-        dataSourceSnapshot.appendItems(data)
-        dataSource.apply(dataSourceSnapshot, animatingDifferences: true)
-    }
-
-    private func clearSnapshot() {
-        dataSourceSnapshot.deleteItems(data)
-        data = []
+        let diff = data.difference(from: dataSourceSnapshot.itemIdentifiers)
+        let currentIdentifiers = dataSourceSnapshot.itemIdentifiers
+        guard let newIdentifiers = currentIdentifiers.applying(diff) else {
+            return
+        }
+        dataSourceSnapshot.deleteItems(currentIdentifiers)
+        dataSourceSnapshot.appendItems(newIdentifiers)
+        if refreshControl.isRefreshing {
+            dataSource.apply(dataSourceSnapshot, animatingDifferences: false)
+        } else {
+            dataSource.apply(dataSourceSnapshot, animatingDifferences: true)
+        }
     }
 }
 
