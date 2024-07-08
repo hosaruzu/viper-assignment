@@ -51,7 +51,6 @@ final class ErrorView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearance()
         setupSubviews()
         setupConstraints()
         setupButtonAction()
@@ -80,14 +79,6 @@ final class ErrorView: UIView {
     }
 }
 
-// MARK: - Setup Appearance
-
-private extension ErrorView {
-    func setupAppearance() {
-//        backgroundColor = .systemBackground
-    }
-}
-
 // MARK: - Setup layout
 
 private extension ErrorView {
@@ -107,7 +98,6 @@ private extension ErrorView {
         vStack.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-
     }
 }
 
