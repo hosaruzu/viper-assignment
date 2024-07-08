@@ -7,7 +7,7 @@
 
 import UIKit
 
-final public class VAImageView: UIImageView {
+final class VAImageView: UIImageView {
 
     // MARK: - Init
 

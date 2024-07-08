@@ -7,7 +7,9 @@
 
 import UIKit
 
-final public class VALabel: UILabel {
+final class VALabel: UILabel {
+
+    // MARK: - Variations of Fonts & Foreground colors
 
     public enum Font {
         case priceList
@@ -35,6 +37,8 @@ final public class VALabel: UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Setup appearance
 
     func setFont(with fontKind: Font) {
         switch fontKind {
