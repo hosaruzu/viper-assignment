@@ -5,8 +5,6 @@
 //  Created by Artem Tebenkov on 06.07.2024.
 //
 
-import Foundation
-
 public enum DetailRequest: RequestProtocol {
     case getDetail(_ id: String)
 

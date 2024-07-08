@@ -28,7 +28,7 @@ public final class RequestManager: RequestManagerProtocol {
             return decoded
         } catch {
             print("Decoder error")
-            throw NetworkError.invalidServerResponse
+            throw NetworkError.decodingFailure
         }
     }
 }

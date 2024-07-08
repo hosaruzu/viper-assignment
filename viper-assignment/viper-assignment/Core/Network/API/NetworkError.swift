@@ -8,6 +8,7 @@
 enum NetworkError: Error, CustomStringConvertible {
     case invalidURL
     case invalidServerResponse
+    case decodingFailure
 
     var description: String {
         switch self {
@@ -15,6 +16,8 @@ enum NetworkError: Error, CustomStringConvertible {
             "URL string in malformed."
         case .invalidServerResponse:
             "The server returned an invalid response."
+        case .decodingFailure:
+            "Problem occured while decoding data from server."
         }
     }
 }
