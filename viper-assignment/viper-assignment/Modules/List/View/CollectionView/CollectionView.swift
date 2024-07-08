@@ -17,13 +17,26 @@ final class CollectionView: UIView {
     // MARK: - Subviews
 
     private var collectionView: UICollectionView!
+    private let emptyStateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No results"
+        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.isHidden = true
+        return label
+    }()
     private let refreshControl = UIRefreshControl()
 
     // MARK: - Collection View Data Source
 
     private enum Section { case main }
-    private var data: [Product] = []
+    private var data: [Product] = [] {
+        didSet {
+            emptyStateLabel.isHidden = !data.isEmpty
+            updateSnapshot()
+        }
+    }
     private var dataSource: UICollectionViewDiffableDataSource<Section, Product>!
+    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, Product>()
 
     // MARK: - ListViewDelegate
 
@@ -46,8 +59,6 @@ final class CollectionView: UIView {
 
     func setupWith(_ data: [Product]) {
         self.data = data
-
-        setupSnapshot()
         refreshControl.endRefreshing()
     }
 }
@@ -71,15 +82,18 @@ private extension CollectionView {
 
     @objc
     func triggerRefreshControl() {
-        data = []
-        setupSnapshot()
+        clearSnapshot()
         delegate?.didTriggerRefresh()
     }
 
     func setupLayout() {
         addSubview(collectionView)
+        addSubview(emptyStateLabel)
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        emptyStateLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 
@@ -92,10 +106,17 @@ private extension CollectionView {
     }
 
     private func setupSnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Product>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(data)
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSourceSnapshot.appendSections([.main])
+    }
+
+    private func updateSnapshot() {
+        dataSourceSnapshot.appendItems(data)
+        dataSource.apply(dataSourceSnapshot, animatingDifferences: true)
+    }
+
+    private func clearSnapshot() {
+        dataSourceSnapshot.deleteItems(data)
+        data = []
     }
 }
 

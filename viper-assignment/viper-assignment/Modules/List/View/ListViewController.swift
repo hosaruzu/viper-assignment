@@ -56,7 +56,6 @@ private extension ListViewController {
         view.addSubview(collectionView)
         view.addSubview(loaderView)
         view.addSubview(errorView)
-
     }
 
     private func setupConstraints() {
