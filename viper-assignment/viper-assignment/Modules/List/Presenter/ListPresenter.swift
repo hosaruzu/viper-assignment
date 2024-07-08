@@ -10,13 +10,19 @@ import Foundation
 @MainActor
 final class ListPresenter {
 
+    // MARK: - Modules
+
     unowned var view: ListViewInput
     private let interactor: ListInteractorInput
     private let router: ListRouterInput
 
     private weak var detailScreen: DetailModuleInput?
 
+    // MARK: - Data source
+
     private var data: [Product] = []
+
+    // MARK: - Init
 
     init(
         view: ListViewInput,
@@ -28,6 +34,8 @@ final class ListPresenter {
         self.router = router
     }
 }
+
+// MARK: - View output
 
 extension ListPresenter: ListViewOutput {
 
@@ -54,25 +62,26 @@ extension ListPresenter: ListViewOutput {
     }
 }
 
+// MARK: - Interactor output
+
 extension ListPresenter: ListInteractorOutput {
 
     func setSuccessObtainData(_ data: [Product]) {
-        Task {
-            self.data = data
-            view.set(state: .success(data: data))
-        }
+        self.data = data
+        setViewStateOnMainActor(.success(data: data))
     }
 
     func setFailedObtainData(error: Error) {
-        Task {
-            view.set(state: .error(description: error.localizedDescription))
-        }
+        setViewStateOnMainActor(.error(description: error.localizedDescription))
     }
 
     func didTriggerRefresh() {
+        viewDidLoad()
+    }
+
+    func setViewStateOnMainActor(_ state: ListViewState) {
         Task {
-            view.set(state: .loading)
-            try await interactor.obtainProductsList()
+            view.set(state: state)
         }
     }
 }

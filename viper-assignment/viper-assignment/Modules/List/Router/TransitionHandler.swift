@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Abstract transition between modules
+
 protocol TransitionHandler: AnyObject {
     func pushToModule(viewController: UIViewController)
 }

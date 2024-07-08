@@ -9,10 +9,16 @@ import Foundation
 
 final class DetailPresenter {
 
+    // MARK: - Modules
+
     unowned var view: DetailViewInput
     private let interactor: DetailInteractorInput
 
+    // MARK: - Detail Id from outside
+
     let id: String
+
+    // MARK: - Init
 
     init(
         id: String,
@@ -25,6 +31,8 @@ final class DetailPresenter {
     }
 }
 
+// MARK: - View output
+
 extension DetailPresenter: DetailViewOutput {
     func viewDidLoad() {
         Task {
@@ -32,6 +40,8 @@ extension DetailPresenter: DetailViewOutput {
         }
     }
 }
+
+// MARK: - Interactor output
 
 extension DetailPresenter: DetailInteractorOutput {
     func setSuccessObtainData(_ data: DetailProduct) {
@@ -46,6 +56,6 @@ extension DetailPresenter: DetailInteractorOutput {
 
 }
 
-extension DetailPresenter: DetailModuleInput {
+// MARK: - Module output (data back flow)
 
-}
+extension DetailPresenter: DetailModuleInput {}

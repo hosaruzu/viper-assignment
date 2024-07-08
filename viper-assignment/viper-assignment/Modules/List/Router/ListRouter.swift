@@ -12,7 +12,6 @@ final class ListRouter {
 }
 
 extension ListRouter: ListRouterInput {
-
     func pushToDetail(_ id: String) -> DetailModuleInput {
         let viewController = DetailViewController()
         let detailInput = DetailAssembly.build(view: viewController, id: id)

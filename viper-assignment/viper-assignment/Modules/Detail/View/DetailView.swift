@@ -24,7 +24,7 @@ final class DetailView: UIView {
     private let vStack: UIStackView = {
         let vStack = UIStackView()
         vStack.axis = .vertical
-        vStack.spacing = 6
+        vStack.spacing = Spec.Stack.defaultSpacing
         return vStack
     }()
 
@@ -48,7 +48,6 @@ final class DetailView: UIView {
         detailPriceLabel.text = product.price
         detailTitleLabel.text = product.title
         detailAddressLabel.text = product.location
-        detailDescriptionLabel.text = "Description"
         detailDescriptionBodyLabel.text = product.description
         detailMailLabel.text = product.email
         detailPhoneLabel.text = product.phoneNumber
@@ -60,6 +59,8 @@ final class DetailView: UIView {
 private extension DetailView {
     func setupAppearance() {
         backgroundColor = .systemBackground
+        detailDescriptionLabel.text = "Description"
+        detailDescriptionBodyLabel.numberOfLines = 0
     }
 }
 
@@ -75,9 +76,8 @@ private extension DetailView {
         vStack.addArrangedSubview(detailMailLabel)
         vStack.addArrangedSubview(detailPhoneLabel)
 
-        vStack.setCustomSpacing(0, after: detailMailLabel)
-        vStack.setCustomSpacing(12, after: detailAddressLabel)
-        detailDescriptionBodyLabel.numberOfLines = 0
+        vStack.setCustomSpacing(Spec.Stack.mailCustomSpacing, after: detailMailLabel)
+        vStack.setCustomSpacing(Spec.Stack.addressCustomSpacing, after: detailAddressLabel)
 
         addSubview(detailImageView)
         addSubview(vStack)
@@ -87,12 +87,28 @@ private extension DetailView {
         detailImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.5)
+            make.height.equalToSuperview().multipliedBy(Spec.Image.heightRatio)
         }
 
         vStack.snp.makeConstraints { make in
-            make.top.equalTo(detailImageView.snp.bottom).offset(16)
-            make.horizontalEdges.equalToSuperview().inset(8)
+            make.top.equalTo(detailImageView.snp.bottom).offset(Spec.Stack.topOffset)
+            make.horizontalEdges.equalToSuperview().inset(Spec.Stack.horizontalOffset)
         }
+    }
+}
+
+// MARK: - UI constants
+
+private enum Spec {
+    enum Stack {
+        static let defaultSpacing: CGFloat = 6
+        static let addressCustomSpacing: CGFloat = 12
+        static let mailCustomSpacing: CGFloat = 0
+        static let topOffset: CGFloat = 16
+        static let horizontalOffset: CGFloat = 8
+    }
+
+    enum Image {
+        static let heightRatio: CGFloat = 0.5
     }
 }
