@@ -12,7 +12,7 @@ final class DetailView: UIView {
 
     // MARK: - Subviews
 
-    private let detailImageView = VAImageView(isRounded: false)
+    private let detailImageView = VAImageView()
     private let detailPriceLabel = VALabel(font: .titleDetail, textColor: .title)
     private let detailTitleLabel = VALabel(font: .titleDetail, textColor: .title)
     private let detailAddressLabel = VALabel(font: .bodyDetail, textColor: .title)

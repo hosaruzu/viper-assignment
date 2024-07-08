@@ -12,7 +12,7 @@ final class ProductCell: UICollectionViewCell {
 
     // MARK: - Subviews
 
-    private let productImageView = VAImageView(isRounded: true)
+    private let productImageView = VAImageView(cornerRadius: Spec.Image.cornerRadius)
     private let productNameLabel = VALabel(font: .titleList, textColor: .title)
     private let productPriceLabel = VALabel(font: .priceList, textColor: .title)
     private let cityLabel = VALabel(font: .bodyList, textColor: .subtitle)
@@ -102,6 +102,7 @@ private enum Spec {
     }
 
    enum Image {
+       static let cornerRadius: CGFloat = 8
        static let height: CGFloat = 170
        static let scalingSize: CGSize = CGSize(width: 100, height: 100)
     }
