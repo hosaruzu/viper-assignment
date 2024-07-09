@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol APIManagerProtocol {
-    func perform(_ request: RequestProtocol) async throws -> Data
+    func perform(_ request: some RequestProtocol) async throws -> Data
 }
 
 public class APIManager: APIManagerProtocol {
@@ -19,7 +19,7 @@ public class APIManager: APIManagerProtocol {
         self.urlSession = urlSession
     }
 
-    public func perform(_ request: RequestProtocol) async throws -> Data {
+    public func perform(_ request: some RequestProtocol) async throws -> Data {
         let (data, response) = try await urlSession.data(for: request.createURLReques())
         guard let httpResonse = response as? HTTPURLResponse,
               httpResonse.statusCode == 200
